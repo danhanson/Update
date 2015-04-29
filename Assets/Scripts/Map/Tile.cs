@@ -45,7 +45,7 @@ namespace Update.Map {
 			// do nothing
 		}
 
-		public void Start(){
+		public virtual void Start(){
 			// get the tiles position and insert it into the map
 			// this is backwards from what one would expect, which
 			// is for the map to determine where the tile are placed,

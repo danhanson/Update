@@ -36,16 +36,28 @@ namespace Update.Characters {
 		}
 
 		protected virtual void LandOnTile(){
-			Tile.Map [index.X, index.Y].OnLand (this);
+			Tile t = Tile.Map [index.X, index.Y];
+			if (t == null) {
+				return;
+			}
+			t.OnLand (this);
 		}
 
 		protected virtual bool ExitTile(){
-			return Tile.Map [index.X, index.Y].OnExit(this);
+			Tile t = Tile.Map [index.X, index.Y];
+			if (t == null) {
+				return false;
+			}
+			return t.OnExit (this);
 		}
 
 		protected virtual bool EnterTile(){
 			Vector dst = movement.DirectionVector() + index;
-			return Tile.Map [dst.X, dst.Y].OnEnter(this);
+			Tile t = Tile.Map [dst.X, dst.Y];
+			if (t == null) {
+				return false;
+			}
+			return t.OnEnter (this);
 		}
 
 		protected void Stand(){
@@ -120,9 +132,11 @@ namespace Update.Characters {
 			// so that we don't call OnExit and OnEnter callbacks unless the
 			// character is moving. DON'T 'OPTIMIZE' IT by removing the check for
 			// this.Moving
+
 			if (movement == Movement.STANDING || !ExitTile () || !EnterTile ()) {
 				movement = Movement.STANDING;
 			}
+
 			if (GetAction ()) {
 				Action ();
 			}

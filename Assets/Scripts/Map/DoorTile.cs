@@ -15,12 +15,12 @@ namespace Update.Map {
 		public int Level;
 		public Vector EntryPoint;
 
+
 		public override void OnLand(Character c) {
 			if (c.gameObject.name != PLAYER_NAME)
 				return;
-
-			DontDestroyOnLoad (this.gameObject);
-			Application.LoadLevel (Level);
+			DontDestroyOnLoad (transform.root.gameObject);
+			Application.LoadLevel(Level);
 		}
 
 		public void OnLevelWasLoaded(int level){
@@ -28,7 +28,7 @@ namespace Update.Map {
 				GameObject obj = GameObject.Find (PLAYER_NAME);
 				Player p = obj.GetComponent<Player>();
 				p.MoveTo(EntryPoint);
-				Destroy (this.gameObject);
+				Destroy (transform.root.gameObject);
 			}
 		}
 	}
