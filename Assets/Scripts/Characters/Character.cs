@@ -17,7 +17,12 @@ namespace Update.Characters
 		}
 
 		public virtual void OnLevelWasLoaded(){
+			print ("ADDED CHARACTER");
 			Tile.Map [index].character = this;
+		}
+
+		public virtual void Awake(){
+			OnLevelWasLoaded();
 		}
 	}
 }

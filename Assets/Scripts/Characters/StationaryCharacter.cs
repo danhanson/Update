@@ -11,7 +11,8 @@ namespace Update.Characters
 		private Dialogue.Dialogue d;
 
 		public void Start(){
-			d = dialogue.GetComponent<Dialogue.Dialogue> ();
+			if(dialogue)
+				d = dialogue.GetComponent<Dialogue.Dialogue> ();
 		}
 
 		public override void Action (Character o)
