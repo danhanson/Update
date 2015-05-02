@@ -129,3 +129,9 @@ Cmd: compileSnippet
   api=4 type=1 insize=1934 outsize=9025 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE UNITY_HDR_ON ok=1
 Cmd: compileSnippet
   api=8 type=0 insize=1051 outsize=1780 kw= ok=1
+Unhandled exception: Readfile from pipe failed. GLE=Broken pipe.
+
+
+Quitting shader compiler process
+
+Crashed!

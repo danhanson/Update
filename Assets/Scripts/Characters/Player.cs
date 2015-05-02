@@ -3,7 +3,7 @@ using System.Collections;
 using Update;
 
 namespace Update.Characters {
-	public class Player : Character {
+	public class Player : MovingCharacter {
 
 		private bool keydown;
 
@@ -26,8 +26,6 @@ namespace Update.Characters {
 
 		public void MoveTo(Vector pos){
 			index = pos;
-			this.transform.position =
-				new Vector3(pos.X,pos.Y,this.transform.position.z);
 		}
 	}
 }

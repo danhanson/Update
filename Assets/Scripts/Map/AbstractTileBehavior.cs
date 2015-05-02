@@ -11,7 +11,7 @@ namespace Update.Map {
 	//
 	// both OnExit and OnEnter return a bool to indicate whether the character is blocked or is allowed to 
 	// continue moving
-	public abstract class AbstractTileBehavior : MonoBehaviour {
+	public abstract class AbstractTileBehavior : InMap {
 		// called when a character begins heading towards this tile
 		// returns true if entry succeeds, otherwise returns false
 		public abstract bool OnEnter (Character c);
