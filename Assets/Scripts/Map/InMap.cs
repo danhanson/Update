@@ -27,7 +27,7 @@ namespace Update
 		}
 
 		public Tile tile(){
-			return Tile.Map[index];
+			return GameData.map[index];
 		}
 	}
 }

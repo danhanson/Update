@@ -12,17 +12,14 @@ namespace Update.Characters
 		}
 
 		// do an action on this character
-		public virtual void Action(Character o){
+		public virtual void OnAction(Character o){
 			// do nothing
+			print ("OWW YOU HIT ME!");
 		}
 
-		public virtual void OnLevelWasLoaded(){
-			print ("ADDED CHARACTER");
-			Tile.Map [index].character = this;
-		}
-
-		public virtual void Awake(){
-			OnLevelWasLoaded();
+		public virtual void Start(){
+			print ("start");
+			tile ().character = this;
 		}
 	}
 }

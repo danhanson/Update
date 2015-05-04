@@ -18,45 +18,39 @@ namespace Update.Characters {
 		public MovingCharacter(){
 			movement = Movement.STANDING;
 		}
-		public virtual void Start () {
+		public override void Start () {
+			base.Start ();
 			index = base.index;
 			anim = GetComponent<Animator>();
 		}
 
-		protected virtual void OnAction(){
+		protected virtual void DoAction(){
 			Vector v = FacingTowards();
-			Tile.Map [v.X, v.Y].OnAction (this);
+			Tile t = Tile.get (v);
+			if (t == null)
+				return;
+			t.OnAction (this);
 		}
 
 		protected virtual void LandOnTile(){
-			Tile t = tile ();
-			if (t == null) {
-				return;
-			}
-			t.OnLand (this);
+			tile ().OnLand (this);
 		}
 
 		protected virtual bool ExitTile(){
-			Tile t = tile ();
-			if (t == null) {
-				return false;
-			}
-			return t.OnExit (this);
+			return tile ().OnExit (this);
 		}
-
 
 		protected virtual bool EnterTile(){
 			Vector dst = FacingTowards();
-			Tile t = Tile.Map [dst.X, dst.Y];
-			if (t == null) {
+			Tile t = Tile.get (dst);
+			if(t == null){
 				return false;
 			}
 			return t.OnEnter (this);
 		}
 
 		protected void Stand(){
-			Vector3 pos = gameObject.transform.position;
-			index = new Vector((int)pos.x, (int)pos.y);
+			index = base.index;
 			UpdateMovement ();
 		}
 
@@ -116,7 +110,7 @@ namespace Update.Characters {
 		}
 
 		// Called after every animation
-		private void UpdateMovement(){
+		protected void UpdateMovement(){
 			movement = GetMovement ();
 			UpdateAnimation ();
 			if (movement != Movement.STANDING) {
@@ -130,15 +124,8 @@ namespace Update.Characters {
 			if (movement == Movement.STANDING || !ExitTile () || !EnterTile ()) {
 				movement = Movement.STANDING;
 			}
-
-			if (GetAction ()) {
-				OnAction ();
-			}
 		}
 
-		public abstract bool GetAction();
-
-
-		public abstract Movement GetMovement();
+		protected abstract Movement GetMovement();
 	}
 }

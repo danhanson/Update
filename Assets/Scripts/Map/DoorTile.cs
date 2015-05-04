@@ -23,7 +23,7 @@ namespace Update.Map {
 			Application.LoadLevel(Level);
 		}
 
-		public void OnLevelWasLoaded(int level){
+		public virtual void OnLevelWasLoaded(int level){
 			if (this.Level == level) {
 				GameObject obj = GameObject.Find (PLAYER_NAME);
 				Player p = obj.GetComponent<Player>();

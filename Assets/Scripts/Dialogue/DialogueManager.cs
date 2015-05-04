@@ -37,7 +37,7 @@ namespace Update.Dialogue {
 			player.enabled = false;
 			GameObject box = Instantiate (dialogueBox);
 			Text t = box.GetComponent<Text>();
-			t.text = textStr;
+			t.text = label + ": "+textStr;
 			box.transform.SetParent(history.transform);
 			onSpace = callback;
 			box.SetActive (true);

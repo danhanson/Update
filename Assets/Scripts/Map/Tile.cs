@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 using System.Collections;
 using Update.Characters;
+using Update;
 
 namespace Update.Map {
 	/*
@@ -11,9 +12,6 @@ namespace Update.Map {
 	[System.Serializable]
 	[RequireComponent (typeof (SpriteRenderer))]
 	public class Tile : AbstractTileBehavior {
-
-		// maps indices to tiles, is horrible and hacky so I should change it or something
-		public static TileMap Map = new TileMap(31,31);
 		
 		public Character character { get; internal set; }
 
@@ -46,7 +44,7 @@ namespace Update.Map {
 		// when character presses action button on or towards tile
 		public override void OnAction (Character c){
 			if (character != null) {
-				character.Action (c);
+				character.OnAction (c);
 			}
 			foreach (TileBehavior t in gameObject.GetComponents<TileBehavior>()) {
 				t.OnAction(c);
@@ -54,15 +52,23 @@ namespace Update.Map {
 		}
 
 		public override void OnLand (Character c){
-			// do nothing
+			// do nothinga
 		}
 
-		public virtual void Awake(){
+		public static Tile get(Vector index){
+			return GameData.map [index];
+		}
+
+		public static Tile get(int x, int y){
+			return GameData.map [x, y];
+		}
+
+		public virtual void OnEnable(){
 			// get the tiles position and insert it into the map
 			// this is backwards from what one would expect, which
 			// is for the map to determine where the tile are placed,
 			// but it makes it easier to make the maps in unity
-			Map[index] = this;
+			GameData.map[index] = this;
 		}
 	}
 }

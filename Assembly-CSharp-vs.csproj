@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\Dialogue\MultiTalk.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Talk.cs" />
+     <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\Map\AbstractTileBehavior.cs" />
      <Compile Include="Assets\Scripts\Map\CharacterTile.cs" />
      <Compile Include="Assets\Scripts\Map\DoorTile.cs" />

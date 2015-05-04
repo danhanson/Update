@@ -30,6 +30,14 @@ namespace Update.Map
 			get { return tiles [x, y]; }
 			set { tiles [x, y] = value; }
 		}
+
+		public override string ToString(){
+			string ret = "[";
+			foreach(Tile tile in tiles){
+				ret += tile ? tile.index.ToString() : "(NULL)";
+			}
+			return ret + "]";
+		}
 	}
 }
 

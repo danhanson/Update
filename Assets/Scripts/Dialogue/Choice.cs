@@ -11,10 +11,16 @@ namespace Update.Dialogue
 	 */
 	public class Choice : Dialogue
 	{
+		
+		public string question;
+		
+		public string label;
 
 		public override void Apply ()
 		{
-			print (this.transform.childCount);
+			if (question != null) {
+				manager.AddDialogue(label,question);
+			}
 			foreach (Transform child in transform) {
 				Dialogue next = child.GetComponent<Dialogue>();
 				manager.AddOption(child.name,next);

@@ -10,12 +10,13 @@ namespace Update.Characters
 		public GameObject dialogue;
 		private Dialogue.Dialogue d;
 
-		public void Start(){
+		public override void Start(){
+			base.Start ();
 			if(dialogue)
 				d = dialogue.GetComponent<Dialogue.Dialogue> ();
 		}
 
-		public override void Action (Character o)
+		public override void OnAction (Character o)
 		{
 			if(d)
 				d.Apply ();
