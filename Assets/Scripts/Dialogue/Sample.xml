@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <dialogue>
-	<portrait>0</portrait>
-	<orientation>right</orientation>
+	<portrait>happy</portrait>
 	<speaker>NPC</speaker>
 	<text>Hello I am an NPC</text>
-	<question>
-		<text>How are you doing?</text>
-		<answer>
-			<label>Good</label>
+	<question value="How are youd doing?">
+		<answer label="Good">
 			<speaker>Player</speaker>
 			<text>I'm doing great!</text>
 			<speaker>MPC</speaker>
 			<text>Thats good!</text>
 		</answer>
-		<answer>
-			<label>Bad</label>
+		<answer label="Bad">
 			<speaker>Player</speaker>
-			<text>I'm upset</player>
+			<text>I'm upset</text>
+			<portrait>sad</portrait>
 			<speaker>NPC</speaker>
 			<text>thats too bad</text>
 		</answer>

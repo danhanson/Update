@@ -114,7 +114,8 @@ namespace Update.Characters {
 		}
 
 		public virtual void OnEnable(){
-			anim.speed = 1;
+			if(anim != null)	// anim may not have been set yet
+				anim.speed = 1;
 		}
 
 		// Called after every animation

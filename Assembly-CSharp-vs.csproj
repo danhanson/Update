@@ -51,12 +51,8 @@
      <Compile Include="Assets\Scripts\Characters\MovingCharacter.cs" />
      <Compile Include="Assets\Scripts\Characters\Player.cs" />
      <Compile Include="Assets\Scripts\Characters\StationaryCharacter.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\Choice.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\DialogueXML.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\MultiTalk.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\Talk.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\Map\AbstractTileBehavior.cs" />
      <Compile Include="Assets\Scripts\Map\CharacterTile.cs" />
