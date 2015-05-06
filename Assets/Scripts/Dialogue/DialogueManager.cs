@@ -23,8 +23,9 @@ namespace Update.Dialogue {
 		private Player player;
 
 		// TODO add transition
-		public void SetPortraitSprite(Sprite s){
-			portraitImage.sprite = s;
+		public Sprite portraitSprite {
+			get { return portraitImage.sprite; }
+			set { portraitImage.sprite = value; }
 		}
 
 		public void AddDialogue(string label, string textStr, Dialogue next = null){

@@ -17,7 +17,7 @@ namespace Update.Dialogue
 			if (null == dialogues || 0 == dialogues.Length)
 				return;
 			if(portrait != null)
-				manager.SetPortraitSprite (portrait);
+				manager.portraitSprite = portrait;
 			Apply (0);
 		}
 

@@ -109,6 +109,14 @@ namespace Update.Characters {
 			}
 		}
 
+		public virtual void OnDisable(){
+			anim.speed = 0;
+		}
+
+		public virtual void OnEnable(){
+			anim.speed = 1;
+		}
+
 		// Called after every animation
 		protected void UpdateMovement(){
 			movement = GetMovement ();

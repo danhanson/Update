@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>0</portrait>
+	<orientation>right</orientation>
+	<speaker>NPC</speaker>
+	<text>Hello I am an NPC</text>
+	<question>
+		<text>How are you doing?</text>
+		<answer>
+			<label>Good</label>
+			<speaker>Player</speaker>
+			<text>I'm doing great!</text>
+			<speaker>MPC</speaker>
+			<text>Thats good!</text>
+		</answer>
+		<answer>
+			<label>Bad</label>
+			<speaker>Player</speaker>
+			<text>I'm upset</player>
+			<speaker>NPC</speaker>
+			<text>thats too bad</text>
+		</answer>
+	</question>
+</dialogue>

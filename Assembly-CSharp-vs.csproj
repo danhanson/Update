@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Dialogue\Choice.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\DialogueXML.cs" />
      <Compile Include="Assets\Scripts\Dialogue\MultiTalk.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Talk.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\Scripts\Map\TileMap.cs" />
      <Compile Include="Assets\Scripts\Map\Vector.cs" />
      <Compile Include="Assets\Scripts\RestrictCamera.cs" />
+     <None Include="Assets\Scripts\Dialogue\Sample.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

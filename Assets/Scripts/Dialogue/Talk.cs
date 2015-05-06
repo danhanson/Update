@@ -15,7 +15,7 @@ namespace Update.Dialogue
 		{
 			print ("TALK APPLY");
 			if(portrait != null)
-				manager.SetPortraitSprite (portrait);
+				manager.portraitSprite = portrait;
 			if (next == null)
 				manager.AddDialogue (label, text, manager.Quit);
 			else
@@ -23,4 +23,3 @@ namespace Update.Dialogue
 		}
 	}
 }
-
