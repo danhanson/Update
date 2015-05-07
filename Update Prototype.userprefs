@@ -1,16 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Characters\StationaryCharacter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Characters\MovingCharacter.cs">
     <Files>
-      <File FileName="Assets\Scripts\Dialogue\Sample.xml" Line="7" Column="24" />
-      <File FileName="Assets\Scripts\Characters\Character.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Dialogue\Sample.xml" Line="5" Column="8" />
+      <File FileName="Assets\Scripts\Characters\Character.cs" Line="20" Column="1" />
       <File FileName="Assets\Scripts\Map\Tile.cs" Line="75" Column="1" />
       <File FileName="Assets\Scripts\Map\TileMap.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Map\DoorTile.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Characters\MovingCharacter.cs" Line="117" Column="24" />
-      <File FileName="Assets\Scripts\Dialogue\DialogueManager.cs" Line="101" Column="1" />
-      <File FileName="Assets\Scripts\Characters\StationaryCharacter.cs" Line="25" Column="2" />
+      <File FileName="Assets\Scripts\Characters\MovingCharacter.cs" Line="51" Column="1" />
+      <File FileName="Assets\Scripts\Dialogue\DialogueManager.cs" Line="32" Column="11" />
+      <File FileName="Assets\Scripts\Characters\StationaryCharacter.cs" Line="14" Column="38" />
       <File FileName="Assets\Editor\AutoSnap.cs" Line="9" Column="1" />
+      <File FileName="Assets\Scripts\Dialogue\Dialogue.cs" Line="75" Column="53" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

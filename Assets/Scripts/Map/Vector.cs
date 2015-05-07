@@ -1,8 +1,10 @@
 
+using System;
+
 namespace Update {
 
 	[System.Serializable]
-	public class Vector {
+	public class Vector : IEquatable<Vector> {
 		public int X;
 		public int Y;
 		public Vector(int x, int y){
@@ -28,6 +30,10 @@ namespace Update {
 
 		public override string ToString(){
 			return "("+X+","+Y+")";
+		}
+
+		public bool Equals(Vector o){
+			return (o.X == X) && (o.Y == Y);
 		}
 	}
 }

@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Characters\MovingCharacter.cs" />
      <Compile Include="Assets\Scripts\Characters\Player.cs" />
      <Compile Include="Assets\Scripts\Characters\StationaryCharacter.cs" />
+     <Compile Include="Assets\Scripts\Characters\WaypointCharacter.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />

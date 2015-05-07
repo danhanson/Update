@@ -47,21 +47,14 @@ namespace Update.Characters {
 		public static Movement ToMovement(int x, int y){
 			int horiz = x.CompareTo (0);
 			int vert = y.CompareTo (0);
-			switch (horiz) {
-			case -1:
-				return Movement.LEFT;
-			case 1:
-				return Movement.RIGHT;
-			default:
-				switch (vert) {
-				case -1:
-					return Movement.DOWN;
-				case 1:
-					return Movement.UP;
-				default:
-					return Movement.STANDING;
+			if (Mathf.Abs (horiz) >= Mathf.Abs (vert)) {
+				switch(horiz.CompareTo(0)){
+					case -1: return Movement.LEFT;
+					case  0: return Movement.STANDING;
+					case  1: return Movement.RIGHT;
 				}
 			}
+			return (vert > 0) ? Movement.UP : Movement.DOWN;
 		}
 	
 		public static Movement ToMovement(this Vector v){
