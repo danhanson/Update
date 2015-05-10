@@ -20,12 +20,12 @@ namespace Update.Characters {
 		protected override Movement GetMovement ()
 		{
 			Vector waypoint = waypoints [i];
-			if (index.Equals(waypoint)) {
+			if (Index.Equals(waypoint)) {
 				if(++i == waypoints.Count)
 					i = 0;
 				waypoint = waypoints[i];
 			}
-			return MovementExtension.ToMovement (waypoint - index);
+			return MovementExtension.ToMovement (waypoint - Index);
 		}
 	}
 }

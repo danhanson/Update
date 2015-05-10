@@ -34,7 +34,7 @@ namespace Update.Map
 		public override string ToString(){
 			string ret = "[";
 			foreach(Tile tile in tiles){
-				ret += tile ? tile.index.ToString() : "(NULL)";
+				ret += tile ? tile.Index.ToString() : "(NULL)";
 			}
 			return ret + "]";
 		}

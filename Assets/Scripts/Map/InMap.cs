@@ -15,7 +15,7 @@ namespace Update
 {
 	public class InMap : MonoBehaviour
 	{
-		public Vector index {
+		public virtual Vector Index {
 			get {
 				Vector3 pos = transform.position;
 				return new Vector ((int)pos.x, (int)pos.y);
@@ -27,7 +27,7 @@ namespace Update
 		}
 
 		public Tile tile(){
-			return GameData.map[index];
+			return GameData.map[Index];
 		}
 	}
 }

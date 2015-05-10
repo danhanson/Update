@@ -19,7 +19,7 @@ namespace Update.Characters {
 		}
 
 		public void MoveTo(Vector pos){
-			index = pos;
+			Index = pos;
 		}
 	}
 }

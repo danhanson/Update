@@ -9,18 +9,34 @@ namespace Update.Characters {
 	[RequireComponent (typeof (Animator))]
 	public abstract class MovingCharacter : Character {
 
-		private new Vector index;
+		private Vector lastIndex;
 
-		public Movement movement { get; internal set; }
+		private Vector LastIndex {
+			get { return lastIndex; }
+			set { lastIndex = value; }
+		}
+
+		private Movement movement;
+
+		public Movement Movement {
+			get { return movement; }
+			internal set {
+				Tile next = Tile.get (Index + value.DirectionVector());
+				FaceDirection(value);
+				if(next.character)
+					movement = Movement.STANDING;
+				 else
+					movement = value;
+			}
+		}
 		private Animator anim;
 		public float speed; // speed in tiles per fixedupdate
 
-		public MovingCharacter(){
-			movement = Movement.STANDING;
-		}
 		public override void Start () {
 			base.Start ();
-			index = base.index;
+			Movement = Movement.STANDING;
+			lastIndex = Index;
+			Tile.get (lastIndex).character = this;
 			anim = GetComponent<Animator>();
 		}
 
@@ -46,17 +62,20 @@ namespace Update.Characters {
 			if(t == null){
 				return false;
 			}
-			return t.OnEnter (this);
+			bool suc = t.OnEnter (this);
+			if (suc)
+				t.character = this;
+			return suc;
 		}
 
 		protected void Stand(){
-			index = base.index;
+			LastIndex = Index;
 			UpdateMovement ();
 		}
 
 		protected void Left(){
-			if (transform.position.x - index.X <= -1) {
-				index += new Vector (-1, 0);
+			if (transform.position.x - LastIndex.X <= -1) {
+				LastIndex += new Vector (-1, 0);
 				LandOnTile();
 				UpdateMovement ();
 			} else {
@@ -65,8 +84,8 @@ namespace Update.Characters {
 		}
 
 		protected void Right(){
-			if (transform.position.x - index.X >= 1) {
-				index += new Vector (1, 0);
+			if (transform.position.x - LastIndex.X >= 1) {
+				LastIndex += new Vector (1, 0);
 				LandOnTile();
 				UpdateMovement ();
 			} else {
@@ -75,8 +94,8 @@ namespace Update.Characters {
 		}
 
 		protected void Up(){
-			if (transform.position.y - index.Y >= 1) {
-				index += new Vector (0, 1);
+			if (transform.position.y - LastIndex.Y >= 1) {
+				LastIndex += new Vector (0, 1);
 				LandOnTile();
 				UpdateMovement ();
 			} else {
@@ -85,12 +104,30 @@ namespace Update.Characters {
 		}
 
 		protected void Down(){
-			if (transform.position.y - index.Y <= -1) {
-				index += new Vector (0, -1);
+			if (transform.position.y - LastIndex.Y <= -1) {
+				LastIndex += new Vector (0, -1);
 				LandOnTile();
 				UpdateMovement ();
 			} else {
 				transform.Translate(0,-speed,0);
+			}
+		}
+
+		public void FaceDirection(Movement m){
+			switch(m){
+				case(Movement.STANDING): return;
+				case(Movement.DOWN):
+			 		anim.CrossFade("StandDown",0);
+					return;
+				case(Movement.RIGHT):
+					anim.CrossFade("StandRight",0);
+					return;
+				case(Movement.LEFT):
+					anim.CrossFade("StandLeft",0);
+					return;
+				case(Movement.UP):
+					anim.CrossFade("StandUp",0);
+					return;
 			}
 		}
 
@@ -100,7 +137,7 @@ namespace Update.Characters {
 		}
 
 		public virtual void FixedUpdate () {
-			switch(movement){
+			switch(Movement){
 			case Movement.STANDING: Stand(); break;
 			case Movement.LEFT: Left(); break;
 			case Movement.DOWN: Down(); break;
@@ -120,7 +157,7 @@ namespace Update.Characters {
 
 		// Called after every animation
 		protected void UpdateMovement(){
-			movement = GetMovement ();
+			Movement = GetMovement ();
 			UpdateAnimation ();
 			if (movement != Movement.STANDING) {
 				facing = movement;

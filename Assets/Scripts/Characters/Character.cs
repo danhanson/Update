@@ -5,10 +5,20 @@ namespace Update.Characters
 {
 	public abstract class Character : InMap
 	{
+		
+		public override Vector Index {
+			get { return base.Index; }
+			set {
+				Tile.get(Index).character = null;
+				Tile.get(value).character = this;
+				base.Index = value;
+			}
+		}
+
 		public Movement facing;
 
 		public Vector FacingTowards(){
-			return facing.DirectionVector () + index;
+			return facing.DirectionVector () + Index;
 		}
 
 		// do an action on this character

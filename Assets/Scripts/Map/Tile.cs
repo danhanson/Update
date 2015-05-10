@@ -68,7 +68,7 @@ namespace Update.Map {
 			// this is backwards from what one would expect, which
 			// is for the map to determine where the tile are placed,
 			// but it makes it easier to make the maps in unity
-			GameData.map[index] = this;
+			GameData.map[Index] = this;
 		}
 	}
 }
