@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.Events;
+using Update.Action;
 
 namespace Update.Dialogue {
 
@@ -16,20 +17,12 @@ namespace Update.Dialogue {
 			public Sprite sprite;
 		}
 
-		[System.Serializable]
-		public class Action
-		{
-			public string name;
-			public UnityAction script;
-		}
-
 		public Portrait[] portraits;
-		public Action[] actions;
 
 		public TextAsset xmlFile;
 		public GameObject managerObject;
 
-		private SortedDictionary<string,UnityAction> actionDict;
+		private SortedDictionary<string,UpdateAction> actionDict;
 		private SortedDictionary<string,Sprite> portraitDict;
 
 		private DialogueManager manager;
@@ -85,8 +78,8 @@ namespace Update.Dialogue {
 					}
 				},
 			{ "action", delegate(XmlNode node, Dialogue d){
-					UnityAction action = d.actionDict[node.InnerText.Trim()];
-					action();
+					UpdateAction action = d.actionDict[node.InnerText.Trim()];
+					action.Apply();
 					Parse (node.NextSibling,d);
 				}
 			}
@@ -98,9 +91,9 @@ namespace Update.Dialogue {
 			foreach (Portrait p in portraits) {
 				portraitDict [p.name] = p.sprite;
 			}
-			actionDict = new SortedDictionary<String, UnityAction> ();
-			foreach (Action a in actions) {
-				actionDict[a.name] = a.script;
+			actionDict = new SortedDictionary<String, UpdateAction> ();
+			foreach (UpdateAction a in GetComponents<UpdateAction>()) {
+				actionDict[a.actionName] = a;
 			}
 		}
 	}
