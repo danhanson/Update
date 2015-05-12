@@ -16,6 +16,10 @@
 			<portrait>sad</portrait>
 			<speaker>NPC</speaker>
 			<text>thats too bad</text>
+			<text>TEST TEXT</text>
+			<text>hello this is alot of text right here, this text is for testing the scroll bar to see if it works, if it does tyhen thats good and all of this text should be readable, otherwise that is bad because not everything can be read.</text>
+			<action>Move</action>
 		</answer>
 	</question>
+	<text>This is what I say after both questions!</text>
 </dialogue>

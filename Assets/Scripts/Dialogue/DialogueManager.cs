@@ -12,15 +12,15 @@ namespace Update.Dialogue {
 		public GameObject playerObj;
 		public GameObject portrait;
 		public GameObject options;
-		public GameObject history;
 
 		private UnityAction onSpace;
 
-		public GameObject dialogueBox;
+		public GameObject textObj;
 		public GameObject option;
 
 		private Image portraitImage;
 		private Player player;
+        private Text text;
 
 		// TODO add transition
 		public Sprite portraitSprite {
@@ -36,12 +36,8 @@ namespace Update.Dialogue {
 		public void AddDialogue(string label, string textStr, UnityAction callback){
 			gameObject.SetActive (true);
 			player.enabled = false;
-			GameObject box = Instantiate (dialogueBox);
-			Text t = box.GetComponent<Text>();
-			t.text = label + ": "+textStr;
-			box.transform.SetParent(history.transform);
+            text.text += label + ": "+textStr + "\n\n";
 			onSpace = callback;
-			box.SetActive (true);
 		}
 		
 		public void AddOption(string label, Dialogue result){
@@ -68,15 +64,14 @@ namespace Update.Dialogue {
 		}
 
 		public void ClearHistory(){
-			foreach (Transform child in history.transform) {
-				Destroy(child.gameObject);
-			}
+            text.text = "";
 		}
 
 		public void Start(){
 			portraitImage = portrait.GetComponent<Image> ();
 			onSpace = null;
 			player = playerObj.GetComponent<Player> ();
+            text = textObj.GetComponent<Text>();
 			gameObject.SetActive (false);
 		}
 

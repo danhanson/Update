@@ -27,60 +27,72 @@ namespace Update.Dialogue {
 
 		private DialogueManager manager;
 		private string speaker;
-		protected delegate void ReadXML(XmlNode node, Dialogue d);
+		protected delegate void ReadXML(XmlNode node, Dialogue d, UnityAction onFinished);
 
 		public void Apply(){
 			XmlDocument xml = new XmlDocument ();
 			xml.LoadXml (xmlFile.text);
-			Parse (xml.SelectSingleNode("/dialogue").FirstChild,this);
+			Parse (xml.SelectSingleNode("/dialogue").FirstChild,this,manager.Quit);
 		}
 
-		private static void Parse(XmlNode node, Dialogue d){
-			if (node == null)
-				d.manager.Quit ();
+		private static void Parse(XmlNode node, Dialogue d, UnityAction onFinished){
+			if (node != null)
+				parser [node.Name] (node, d, onFinished);
 			else
-				parser [node.Name] (node, d);
+				onFinished();
 		}
 
-		protected static UnityAction ParseNext(XmlNode node, Dialogue d){
-			if (node == null)
-				return d.manager.Quit;
-			return delegate {
-				Parse (node, d);
-			};
+		protected static UnityAction ParseNext(XmlNode node, Dialogue d, UnityAction onFinished){
+			if(node != null)
+				return delegate {
+					Parse (node, d, onFinished);
+				};
+			else
+				return onFinished;
 		}
 
 		protected static SortedDictionary<string,ReadXML> parser = new SortedDictionary<string,ReadXML>
 		{
-			{ "text", delegate(XmlNode node, Dialogue d){
-					d.manager.AddDialogue(d.speaker,node.InnerText.Trim(),ParseNext(node.NextSibling, d));
+			{ "text", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+					d.manager.AddDialogue(
+							d.speaker,node.InnerText.Trim(),
+							ParseNext(node.NextSibling, d, onFinished)
+						);
 				}
 			},
-			{ "portrait", delegate(XmlNode node, Dialogue d){
-					d.manager.portraitSprite = d.portraitDict[node.InnerText.Trim()]; Parse(node.NextSibling,d);
+			{ "portrait", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+					d.manager.portraitSprite = 
+						d.portraitDict[node.InnerText.Trim()];
+					Parse(node.NextSibling,d,onFinished);
 				}
 			},
-			{ "speaker",  delegate(XmlNode node, Dialogue d){
+			{ "speaker",  delegate(XmlNode node, Dialogue d, UnityAction onFinished){
 					d.speaker = node.InnerText.Trim();
-					Parse(node.NextSibling,d);
+					Parse(node.NextSibling,d,onFinished);
 				}
 			},
-			{ "question", delegate(XmlNode node, Dialogue d){
-					string question = node.Attributes["value"].InnerText;
-					d.manager.AddDialogue(d.speaker,question.Trim());
-					foreach(XmlNode child in node.ChildNodes){
-						Parse(child,d);
-					}
+			{ "question", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+						string question = node.Attributes["value"].InnerText;
+						d.manager.AddDialogue(d.speaker,question.Trim());
+						UnityAction afterQuestion = delegate{
+							Parse(node.NextSibling,d,onFinished);
+						};
+						foreach(XmlNode child in node.ChildNodes){
+							Parse(child,d,afterQuestion);
+						}
 					}
 				},
-			{ "answer",  delegate(XmlNode node, Dialogue d){
-						d.manager.AddOption(node.Attributes["label"].InnerText.Trim(),ParseNext(node.FirstChild, d));
+			{ "answer",  delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+						d.manager.AddOption(
+								node.Attributes["label"].InnerText.Trim(),
+								ParseNext(node.FirstChild, d, onFinished)
+							);
 					}
 				},
-			{ "action", delegate(XmlNode node, Dialogue d){
+			{ "action", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
 					UpdateAction action = d.actionDict[node.InnerText.Trim()];
 					action.Apply();
-					Parse (node.NextSibling,d);
+					Parse (node.NextSibling,d,onFinished);
 				}
 			}
 		};
@@ -97,5 +109,4 @@ namespace Update.Dialogue {
 			}
 		}
 	}
-
 }

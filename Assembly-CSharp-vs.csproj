@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Action\ExampleAction.cs" />
      <Compile Include="Assets\Scripts\Action\UpdateAction.cs" />
      <Compile Include="Assets\Scripts\Characters\Character.cs" />
      <Compile Include="Assets\Scripts\Characters\Movement.cs" />
@@ -66,6 +67,7 @@
      <Compile Include="Assets\Scripts\Map\TileMap.cs" />
      <Compile Include="Assets\Scripts\Map\Vector.cs" />
      <Compile Include="Assets\Scripts\RestrictCamera.cs" />
+     <Compile Include="Assets\Scripts\UpdateBar.cs" />
      <None Include="Assets\Scripts\Dialogue\Sample.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

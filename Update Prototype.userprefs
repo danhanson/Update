@@ -1,14 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Characters\MovingCharacter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dialogue\Sample.xml">
     <Files>
-      <File FileName="Assets\Scripts\Characters\MovingCharacter.cs" Line="25" Column="5" />
-      <File FileName="Assets\Scripts\Characters\Character.cs" Line="18" Column="26" />
-      <File FileName="Assets\Scripts\Map\InMap.cs" Line="35" Column="1" />
-      <File FileName="Assets\Scripts\Characters\Player.cs" Line="22" Column="5" />
-      <File FileName="Assets\Scripts\Characters\WaypointCharacter.cs" Line="28" Column="53" />
-      <File FileName="Assets\Scripts\Map\Tile.cs" Line="57" Column="3" />
-      <File FileName="Assets\Scripts\Map\TileMap.cs" Line="25" Column="16" />
+      <File FileName="Assets\Scripts\Action\ExampleAction.cs" Line="9" Column="16" />
+      <File FileName="Assets\Scripts\Characters\Character.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Action\UpdateAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Dialogue\Sample.xml" Line="5" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
