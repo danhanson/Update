@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Map\CharacterTile.cs" />
      <Compile Include="Assets\Scripts\Map\DoorTile.cs" />
      <Compile Include="Assets\Scripts\Map\InMap.cs" />
+     <Compile Include="Assets\Scripts\Map\Level.cs" />
      <Compile Include="Assets\Scripts\Map\SolidTile.cs" />
      <Compile Include="Assets\Scripts\Map\Tile.cs" />
      <Compile Include="Assets\Scripts\Map\TileBehavior.cs" />
