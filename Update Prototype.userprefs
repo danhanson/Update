@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dialogue\Sample.xml">
     <Files>
-      <File FileName="Assets\Scripts\Action\ExampleAction.cs" Line="9" Column="16" />
+      <File FileName="Assets\Scripts\Dialogue\Sample.xml" Line="22" Column="12" />
+      <File FileName="Assets\Scripts\Action\ExampleAction.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Characters\Character.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Action\UpdateAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dialogue\Sample.xml" Line="5" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

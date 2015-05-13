@@ -87,14 +87,37 @@ namespace Update.Dialogue {
 								node.Attributes["label"].InnerText.Trim(),
 								ParseNext(node.FirstChild, d, onFinished)
 							);
-					}
-				},
+				}
+			},
 			{ "action", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
 					UpdateAction action = d.actionDict[node.InnerText.Trim()];
 					action.Apply();
 					Parse (node.NextSibling,d,onFinished);
 				}
-			}
+            },
+            { "jump", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+                    XmlNodeList labelNodes = node.OwnerDocument.GetElementsByTagName("label");
+                    XmlNode theNode = null;
+                    foreach(XmlNode labelNode in labelNodes){
+                        if(labelNode.InnerText.Trim() == node.InnerText.Trim()){
+                            theNode = labelNode;
+                            Parse(theNode.NextSibling, d, d.manager.Quit);
+                        }
+                    }
+                    if(theNode == null){
+                        d.manager.Quit();
+                        throw new XmlException("No Label Tage found with text=\""+node.InnerText.Trim());
+                    }
+                }
+			},
+            { "quit", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+                   d.manager.Quit();
+                }
+            },
+            { "label", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+                    Parse(node.NextSibling,d,onFinished);
+                }
+            }
 		};
 		
 		public void Start(){

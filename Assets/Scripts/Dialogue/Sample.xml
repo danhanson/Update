@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <dialogue>
+	<label>START</label>
 	<portrait>happy</portrait>
 	<speaker>NPC</speaker>
 	<text>Hello I am an NPC</text>
@@ -10,16 +11,26 @@
 			<speaker>MPC</speaker>
 			<text>Thats good!</text>
 		</answer>
+		<answer label="What?">
+			<speaker>Player</speaker>
+			<text>I did not here you, can you repeat that please?</text>
+			<jump>START</jump>
+		</answer>
 		<answer label="Bad">
 			<speaker>Player</speaker>
 			<text>I'm upset</text>
 			<portrait>sad</portrait>
 			<speaker>NPC</speaker>
 			<text>thats too bad</text>
-			<text>TEST TEXT</text>
-			<text>hello this is alot of text right here, this text is for testing the scroll bar to see if it works, if it does tyhen thats good and all of this text should be readable, otherwise that is bad because not everything can be read.</text>
 			<action>Move</action>
 		</answer>
+		<answer label="SHUT UP!">
+			<speaker>Player</speaker>
+			<text>SHUT UP!</text>
+			<portrait>sad</portrait>
+			<text>. . .</text>
+			<quit/>
+		</answer>
 	</question>
-	<text>This is what I say after both questions!</text>
+	<text>This is what I say after the questions!</text>
 </dialogue>
