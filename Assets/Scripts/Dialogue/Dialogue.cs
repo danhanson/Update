@@ -72,8 +72,9 @@ namespace Update.Dialogue {
 				}
 			},
 			{ "question", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
-						string question = node.Attributes["value"].InnerText;
-						d.manager.AddDialogue(d.speaker,question.Trim());
+						XmlAttribute question = node.Attributes["value"];
+                        if(question != null)
+							d.manager.AddDialogue(d.speaker,question.InnerText.Trim());
 						UnityAction afterQuestion = delegate{
 							Parse(node.NextSibling,d,onFinished);
 						};

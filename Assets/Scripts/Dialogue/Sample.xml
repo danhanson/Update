@@ -33,4 +33,14 @@
 		</answer>
 	</question>
 	<text>This is what I say after the questions!</text>
+	<question>
+		<answer label="leave">
+			<quit/>
+		</answer>
+		<answer label="Say Hello">
+			<speaker>Player</speaker>
+			<text>hello</text>
+			<jump>START</jump>
+		</answer>
+	</question>
 </dialogue>
