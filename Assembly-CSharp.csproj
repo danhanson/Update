@@ -47,10 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Action\ExampleAction.cs" />
+     <Compile Include="Assets\Scripts\Action\ExampleQuery.cs" />
+     <Compile Include="Assets\Scripts\Action\Level.cs" />
+     <Compile Include="Assets\Scripts\Action\MakeHappy.cs" />
+     <Compile Include="Assets\Scripts\Action\MakeSad.cs" />
      <Compile Include="Assets\Scripts\Action\UpdateAction.cs" />
+     <Compile Include="Assets\Scripts\Action\UpdateQuery.cs" />
      <Compile Include="Assets\Scripts\Characters\Character.cs" />
      <Compile Include="Assets\Scripts\Characters\Movement.cs" />
      <Compile Include="Assets\Scripts\Characters\MovingCharacter.cs" />
+     <Compile Include="Assets\Scripts\Characters\NPC.cs" />
      <Compile Include="Assets\Scripts\Characters\Player.cs" />
      <Compile Include="Assets\Scripts\Characters\StationaryCharacter.cs" />
      <Compile Include="Assets\Scripts\Characters\WaypointCharacter.cs" />
@@ -61,7 +67,6 @@
      <Compile Include="Assets\Scripts\Map\CharacterTile.cs" />
      <Compile Include="Assets\Scripts\Map\DoorTile.cs" />
      <Compile Include="Assets\Scripts\Map\InMap.cs" />
-     <Compile Include="Assets\Scripts\Map\Level.cs" />
      <Compile Include="Assets\Scripts\Map\SolidTile.cs" />
      <Compile Include="Assets\Scripts\Map\Tile.cs" />
      <Compile Include="Assets\Scripts\Map\TileBehavior.cs" />

@@ -24,6 +24,7 @@ namespace Update.Dialogue {
 
 		private SortedDictionary<string,UpdateAction> actionDict;
 		private SortedDictionary<string,Sprite> portraitDict;
+		private SortedDictionary<string,UpdateQuery> queryDict;
 
 		private DialogueManager manager;
 		private string speaker;
@@ -103,6 +104,7 @@ namespace Update.Dialogue {
                         if(labelNode.InnerText.Trim() == node.InnerText.Trim()){
                             theNode = labelNode;
                             Parse(theNode.NextSibling, d, d.manager.Quit);
+							return;
                         }
                     }
                     if(theNode == null){
@@ -118,7 +120,45 @@ namespace Update.Dialogue {
             { "label", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
                     Parse(node.NextSibling,d,onFinished);
                 }
-            }
+            },
+			{ "query", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+					string ans = d.queryDict[node.Attributes["name"].InnerText.Trim()].Apply();
+					XmlNode next = null;
+					XmlNode def = null;
+					UnityAction afterCase = delegate{
+							Parse(node.NextSibling,d,onFinished);
+						};
+
+					foreach(XmlNode child in node.ChildNodes){
+						if(child.Name == "default"){
+							def = child;
+						} else if(child.Name == "case"){
+							if(ans == child.Attributes["value"].InnerText.Trim()){
+								next = child;
+								Parse(next.FirstChild,d,afterCase);
+								return;
+							}
+						} else {
+							throw new XmlException("only case nodes or default node may be child of query node");
+						}
+					}
+					if(next == null){
+						if(def == null){
+							throw new XmlException("Unresolved case: "+ans);
+						} else {
+							Parse(def.FirstChild,d,afterCase);
+						}
+					}
+				}
+			},
+			{ "case", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+					throw new XmlException("case node must be direct child of query node");
+				}
+			},
+			{ "default", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+					throw new XmlException("default node must be direct child of query node");
+				}
+			}
 		};
 		
 		public void Start(){
@@ -130,6 +170,10 @@ namespace Update.Dialogue {
 			actionDict = new SortedDictionary<String, UpdateAction> ();
 			foreach (UpdateAction a in GetComponents<UpdateAction>()) {
 				actionDict[a.actionName] = a;
+			}
+			queryDict = new SortedDictionary<String, UpdateQuery> ();
+			foreach (UpdateQuery q in GetComponents<UpdateQuery>()){
+				queryDict[q.queryName] = q;
 			}
 		}
 	}

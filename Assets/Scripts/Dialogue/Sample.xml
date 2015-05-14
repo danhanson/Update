@@ -1,46 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <dialogue>
 	<label>START</label>
-	<portrait>happy</portrait>
-	<speaker>NPC</speaker>
-	<text>Hello I am an NPC</text>
-	<question value="How are youd doing?">
-		<answer label="Good">
-			<speaker>Player</speaker>
-			<text>I'm doing great!</text>
-			<speaker>MPC</speaker>
-			<text>Thats good!</text>
-		</answer>
-		<answer label="What?">
-			<speaker>Player</speaker>
-			<text>I did not here you, can you repeat that please?</text>
-			<jump>START</jump>
-		</answer>
-		<answer label="Bad">
-			<speaker>Player</speaker>
-			<text>I'm upset</text>
+	<query name="HappyOrSad">
+		<case value="happy">
+			<portrait>happy</portrait>
+			<speaker>NPC</speaker>
+			<text>Hello I am an NPC</text>
+			<question value="How are youd doing?">
+				<answer label="Good">
+					<speaker>Player</speaker>
+					<text>I'm doing great!</text>
+					<speaker>NPC</speaker>
+					<text>Thats good!</text>
+				</answer>
+				<answer label="What?">
+					<speaker>Player</speaker>
+					<text>I did not here you, can you repeat that please?</text>
+					<jump>START</jump>
+				</answer>
+				<answer label="Bad">
+					<speaker>Player</speaker>
+					<text>I'm upset</text>
+					<action>makeSad</action>
+					<portrait>sad</portrait>
+					<speaker>NPC</speaker>
+					<text>thats too bad</text>
+					<action>Move</action>
+				</answer>
+				<answer label="SHUT UP!">
+					<speaker>Player</speaker>
+					<text>SHUT UP!</text>
+					<portrait>sad</portrait>
+					<action>makeSad</action>
+					<text>. . .</text>
+					<quit/>
+				</answer>
+			</question>
+			<text>This is what I say after the questions!</text>
+			<question>
+				<answer label="leave">
+					<quit/>
+				</answer>
+				<answer label="Say Hello">
+					<speaker>Player</speaker>
+					<text>hello</text>
+					<jump>START</jump>
+				</answer>
+			</question>
+		</case>
+		<case value="sad">
 			<portrait>sad</portrait>
 			<speaker>NPC</speaker>
-			<text>thats too bad</text>
-			<action>Move</action>
-		</answer>
-		<answer label="SHUT UP!">
-			<speaker>Player</speaker>
-			<text>SHUT UP!</text>
-			<portrait>sad</portrait>
-			<text>. . .</text>
-			<quit/>
-		</answer>
-	</question>
-	<text>This is what I say after the questions!</text>
-	<question>
-		<answer label="leave">
-			<quit/>
-		</answer>
-		<answer label="Say Hello">
-			<speaker>Player</speaker>
-			<text>hello</text>
-			<jump>START</jump>
-		</answer>
-	</question>
+			<text>I'm sad go away</text>
+		</case>
+		<default>
+			<text>THIS IS THE DEFAULT TEXT</text>
+		</default>
+	</query>
+	<text>AFTER QUERY</text>
 </dialogue>
