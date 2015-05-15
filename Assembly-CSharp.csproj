@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Action\ExampleAction.cs" />
      <Compile Include="Assets\Scripts\Action\ExampleQuery.cs" />
      <Compile Include="Assets\Scripts\Action\Level.cs" />
+     <Compile Include="Assets\Scripts\Action\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Action\MakeHappy.cs" />
      <Compile Include="Assets\Scripts\Action\MakeSad.cs" />
      <Compile Include="Assets\Scripts\Action\UpdateAction.cs" />

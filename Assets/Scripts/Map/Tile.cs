@@ -21,11 +21,12 @@ namespace Update.Map {
 			if (character != null) {
 				return false;
 			}
-			character = c;
 			bool enter = true;
 			foreach (TileBehavior t in gameObject.GetComponents<TileBehavior> ()) {
 				enter = enter && t.OnEnter (c);
 			}
+			if(enter)
+				character = c;
 			return enter;
 		}
 

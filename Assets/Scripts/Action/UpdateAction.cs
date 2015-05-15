@@ -1,43 +1,71 @@
 
 using UnityEngine;
+using UnityEngine.Events;
+
 
 namespace Update.Action {
 
-	// generic action that can be triggerred by dialogue
+	public interface IAction {
+		void Apply();
+	}
+
+
 	[System.Serializable]
-	public abstract class UpdateAction : MonoBehaviour {
+	public class ActionFunctor : IAction {
 
+		protected virtual UnityAction Action {
+			get;
+			set;
+		}
+
+		// used by subclasses that override Action property
+		protected ActionFunctor(){
+
+		}
+
+		public ActionFunctor(UnityAction action){
+			this.Action = action;
+		}
+
+		public virtual void Apply(){
+			Action.Invoke();
+		}
+
+		public static implicit operator UnityAction (ActionFunctor a){
+			return a.Action;
+		}
+	}
+
+	// generic action that can be triggerred by dialogue
+	public abstract class UpdateAction : MonoBehaviour, IAction {
 		public string actionName;
-
 		public abstract void Apply();
 	}
 
-	// generic Action that is inteded to changes the map
-	[System.Serializable]
-	public abstract class BigAction : UpdateAction {
+	// generic Action that is intended to changes the map
+	public abstract class RecordedAction : UpdateAction {
 
-		public int Level {
+		protected RecordedAction(UnityAction act){
+			Functor = new ActionFunctor(act);
+		}
+
+		protected RecordedAction(ActionFunctor act){
+			Functor = act;
+		}
+
+		protected RecordedAction(){}
+
+		[SerializeField]
+		public virtual ActionFunctor Functor {
 			get;
 			internal set;
 		}
 
-		private bool saved;
-
-		public override void Apply(){
-			if(!saved){
-				LevelManager.RecordAction(this);
-				saved = true;
-			}
-		}
-
-		public void Awake(){
-			saved = false;
-			DontDestroyOnLoad(this);
-		}
-
-		public void OnLevelWasLoaded(int level){
-			if(!saved)
-				this.Level = level;
+		public sealed override void Apply(){
+			int level = Application.loadedLevel;
+			LevelManager.RecordAction(level,this);
+			Functor.Apply();
 		}
 	}
 }
+

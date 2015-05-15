@@ -21,9 +21,11 @@ namespace Update.Characters {
 		public Movement Movement {
 			get { return movement; }
 			internal set {
+				if(value != movement){
+					FaceDirection(value);
+				}
 				Tile next = Tile.get (Index + value.DirectionVector());
-				FaceDirection(value);
-				if(next.character)
+				if(next && next.character)
 					movement = Movement.STANDING;
 				 else
 					movement = value;
@@ -118,17 +120,18 @@ namespace Update.Characters {
 				case(Movement.STANDING): return;
 				case(Movement.DOWN):
 			 		anim.CrossFade("StandDown",0);
-					return;
+					break;
 				case(Movement.RIGHT):
 					anim.CrossFade("StandRight",0);
-					return;
+					break;
 				case(Movement.LEFT):
 					anim.CrossFade("StandLeft",0);
-					return;
+					break;
 				case(Movement.UP):
 					anim.CrossFade("StandUp",0);
-					return;
+					break;
 			}
+			facing = m;
 		}
 
 		private void UpdateAnimation(){
@@ -167,7 +170,7 @@ namespace Update.Characters {
 			// character is moving. DON'T 'OPTIMIZE' IT by removing the check for
 			// this.Moving
 
-			if (movement == Movement.STANDING || !ExitTile () || !EnterTile ()) {
+			if (movement == Movement.STANDING || !EnterTile () || !ExitTile()) {
 				movement = Movement.STANDING;
 			}
 		}

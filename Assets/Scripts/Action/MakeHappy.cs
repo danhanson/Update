@@ -5,10 +5,10 @@ using Update.Action;
 using Update.Characters;
 using Update;
 
-public class MakeHappy : UpdateAction {
+public class MakeHappy : RecordedAction {
 
-	public override void Apply(){
-		NPC n = GetComponent<NPC>();
-		n.isHappy = true;
-	}
+	public MakeHappy() : base(delegate(){
+	    NPC n = GameObject.Find("NPC").GetComponent<NPC>();
+	    n.isHappy = true;
+    }){}
 }

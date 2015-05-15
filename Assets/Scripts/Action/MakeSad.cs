@@ -5,10 +5,12 @@ using Update.Action;
 using Update.Characters;
 using Update;
 
-public class MakeSad : UpdateAction {
+public class MakeSad : RecordedAction {
 
-	public override void Apply(){
-		NPC n = GetComponent<NPC>();
+	// NOTE: DO NOT EXCESS MakeSad in the delegate or else you will get
+	// a null reference exception
+	public MakeSad() : base(delegate(){
+		NPC n = GameObject.Find("NPC").GetComponent<NPC>();
 		n.isHappy = false;
-	}
+	}){}
 }
