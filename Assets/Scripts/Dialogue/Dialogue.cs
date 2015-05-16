@@ -74,7 +74,7 @@ namespace Update.Dialogue {
 			},
 			{ "question", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
 						XmlAttribute question = node.Attributes["value"];
-                        if(question != null)
+                        if(question != null && question.InnerText.Trim() != "")
 							d.manager.AddDialogue(d.speaker,question.InnerText.Trim());
 						UnityAction afterQuestion = delegate{
 							Parse(node.NextSibling,d,onFinished);
@@ -122,7 +122,13 @@ namespace Update.Dialogue {
                 }
             },
 			{ "query", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
-					string ans = d.queryDict[node.Attributes["name"].InnerText.Trim()].Apply();
+					XmlAttribute name = node.Attributes["name"];
+					if(name == null)
+						throw new XmlException("Query has no name");
+					UpdateQuery q = d.queryDict[name.InnerText.Trim()];
+					if(q == null)
+						throw new XmlException("No query with name \""+name);
+					string ans = q.Apply();
 					XmlNode next = null;
 					XmlNode def = null;
 					UnityAction afterCase = delegate{

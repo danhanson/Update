@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<label>START</label>
+	<query name = "checkIsBusy">
+		<case value = "false">
+			<query name = "checkFirst">
+				<case value = "false">
+					<portrait>Owens1</portrait>
+					<speaker>Preacher Owens</speaker>
+					<text>Fear is a powerful force. Fear leads us to do things, to think things, and to be things that we would not otherwise be. But what is fear? It is the belief that someone or something is dangerous, painful, or threatening. Fear is perceived threat.</text>
+					<action>markFirstSermon</action>
+					<question value="">
+						<answer label="Continue Listening">
+							<speaker>Preacher Owens</speaker>
+							<text>Today, like all other days, we woke up in preparation for our daily tasks. We woke up so that we could continue to do the work of the Lord. But unlike other days, today many of us woke up with fear. Today we woke up with something that we could not explain, and for many people, that is a very scary thing. But we have no reason to be afraid. We have no reason to let fear into our lives, to let fear change us or the ones that we love; we can overcome fear. The key to fearlessness is believing that God is with us. That He will strengthen us. That He will help us and uphold us. And in knowing that His greatness is with us, we can continue to lead a life without fear.</text>
+							<question value = "">
+                                    <answer label="Continue Listening">
+                                        <speaker>Preacher Owens</speaker>
+                                        <text>In the book of Isaiah, chapter 41, we are told that it is the time for judgement. We are told to look forward to the redemption of God’s people through the creation of a new Israel. And to Jacob, the Lord said: For I, the Lord your God, hold your right hand; it is I who say to you, “Fear not, I am the one who helps you.” – Isaiah 41:13 Let us remember that we are not alone in this time, for the Lord is always with us. The Lord will never leave us, nor forsake us. And because of this, we have nothing to fear. We have been given a gift. He has allowed us to better ourselves so that we may better serve Him. Why should we fear that which is given to us out of kindness by God?</text>
+                                        <quit/>
+                                    </answer>
+                                    <answer label="Stop Listening">
+                                        <speaker></speaker>
+                                        <text>You ignore the Preacher</text>
+                                        <quit/>
+                                    </answer>
+							</question>
+						</answer>
+						<answer label="Stop Listening">
+							<speaker></speaker>
+							<text>You ignore the Preacher</text>
+							<quit/>
+						</answer>
+					</question>
+				</case>
+				<case value = "true">
+					<query name = "checkSecond">
+						<case value = "false">
+							<portrait>Owens1</portrait>
+							<speaker>Preacher Owens</speaker>
+							<text>We have made it 35% of the way. We have made it further than any human has gone before. Our existence in this time is proof that we are here to do His work, and this thing that many of you have come to call The Update is His way to aid us in His journey.</text>
+							<action>markSecondSermon</action>
+							<question value="">
+								<answer label="Continue Listening">
+									<speaker>Preacher Owens</speaker>
+									<text>Through us, God is transforming this place into a new Earth. Through sanctification, the Holy Spirit has entered all of us and helped us to overcome the negative things inside of us. The Holy Spirit has done this and replaced these things with positive things. And for many of us, this was not an easy time in our lives. This was a time where we had to push ourselves to change our ways. This was a time that we had to repent for what we had done and were doing in order to be deserving of a place in the kingdom of heaven.</text>
+									<question value = "">
+										<answer label="Continue Listening">
+											<speaker>Preacher Owens</speaker>
+											<text>The Earth is going through the same thing as we speak. Riots have started in the streets, towns have lost power, and sinners are rampant. People have lost track of what they hold dear to them. They have let fear into their lives and because of this, they have changed. This update is our Holy Spirit. This was designed to weed out the sinners from the loyal.</text>
+											<question value = "">
+												<answer label="Continue Listening">
+													<speaker>Preacher Owens</speaker>
+													<text>The weak willed from the strong. Those deserving of His love and those who are not. In Romans 12, it is said: And do not be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what the will of God is, that which is good and acceptable and perfect. – Romans 12:2 Hold fast to your beliefs in this time. Remain true to the church. For we are the crusaders of God and those which are deserving of The Update. </text>
+													<quit/>
+												</answer>
+												<answer label="Stop Listening">
+													<speaker></speaker>
+													<text>You ignore the Preacher</text>
+													<quit/>
+												</answer>
+											</question>
+										</answer>
+										<answer label="Stop Listening">
+											<speaker></speaker>
+											<text>You ignore the Preacher</text>
+											<quit/>
+										</answer>
+									</question>
+								</answer>
+								<answer label="Stop Listening">
+									<speaker></speaker>
+									<text>You ignore the Preacher</text>
+									<quit/>
+								</answer>
+							</question>
+						</case>
+						<case value = "true">
+							<portrait>Owens1</portrait>
+							<speaker>Preacher Owens</speaker>
+							<text>Well hello. I don't think I've seen your face in our town before...</text>
+							<action>markFirstConvo</action>
+							<action>makeBusy</action>
+							<question value="What brings you out to a place like this?">
+								<answer label="The church">
+									<speaker>Player</speaker>
+									<text>I seek enlightenment from the church.</text>
+									<speaker>Preacher Owens</speaker>
+									<text>Of course. After all, I am here to help those who need it. And you are no exception. Feel free to enter the church for prayer at your leisure. These are difficult times for us to face by ourselves.</text>
+									<action>addRep</action>
+									<quit/>
+								</answer>
+								<answer label="I was lost.">
+									<speaker>Player</speaker>
+									<text>I just got lost in the woods.</text>
+									<portrait>Owens3</portrait>
+									<speaker>Preacher Owens</speaker>
+									<text>Well, all of us get lost sometimes. I’m just glad I am here to help you find the way to enlightenment. Feel free to enter the church for prayer at your leisure. These are difficult times for us to face by ourselves.</text>
+									<quit/>
+								</answer>
+								<answer label="I'm not interested.">
+									<speaker>Player</speaker>
+									<text>I have no interest in the church.</text>
+									<portrait>Owens2</portrait>
+									<speaker>Preacher Owens</speaker>
+									<text>Oh, a non-believer, are you? Why would you shy away from God and his teachings when he can offer you inner peace, especially at times like these? I hope that you change your mind, who knows what might happen throughout all of this.</text>
+									<quit/>
+									<action>subRep</action>
+								</answer>
+							</question>
+						</case>
+						<default>
+							<text>I broke.</text>
+						</default>
+					</query>
+				</case>
+				<default>
+					<text>I broke.</text>
+				</default>
+			</query>
+		</case>
+		<case value = "true">
+			<query name = "checkSecond">
+				<case value = "true">
+					<action>makeNotBusy</action>
+					<jump>START</jump>
+				</case>
+				<case value = "false">
+					<speaker>Father Owens</speaker>
+					<text>Sorry, I'm busy.</text>
+					<quit/>
+				</case>
+				<default>
+					<text>I broke.</text>
+				</default>
+			</query>
+		</case>
+		<default>
+			<text>I broke.</text>
+		</default>
+	</query>
+</dialogue>
