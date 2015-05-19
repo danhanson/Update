@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Meagan Happy</portrait>
+	<speaker>Alex</speaker>
+	<question speaker="Meagan" value = "Alex!">
+		<answer label = "Meagan!">
+			<text>Meagan!</text>
+			<question speaker="Meagan" value = "Poop face!">
+				<answer label = "Meanie butt!">
+					<text>Meanie butt!</text>
+					<speaker>Meagan</speaker>
+					<text>Giggle</text>
+					<text>Why did the banana go to the doctors?</text>
+					<speaker>Alex</speaker>
+					<text>Why?</text>
+					<speaker>Meagan</speaker>
+					<text>It wasn't PEELING well!!!!</text>
+					<speaker>Alex</speaker>
+					<text>Aw man. He sure SLIPPED up. That joke wasn't even APPEALING.</text>
+					<label>jokes</label>
+					<question speaker="Meagan" value ="Giggle">
+						<answer label = "Tell another">
+							<text>Why didn't the skeleton go to the party?</text>
+							<speaker>Meagan</speaker>
+							<text>Why?</text>
+							<speaker>Alex</speaker>
+							<text>He had nobody to go with!</text>
+							<question speaker="Meagan" value ="Giggle">
+								<answer label = "Tell another">
+									<text>What do you call a boomerang that doesn't come back?</text>
+									<speaker>Meagan</speaker>
+									<text>What?</text>
+									<speaker>Alex</speaker>
+									<text>A stick!</text>
+									<speaker>Meagan</speaker>
+									<text>Thats a pretty great one!</text>
+									<jump>leave</jump>
+								</answer>
+								<answer label = "leave">
+									<jump>leave</jump>
+								</answer>
+							</question>
+						</answer>
+						<answer label = "leave">
+							<jump>leave</jump>
+						</answer>
+					</question>
+				</answer>
+				<answer label = "Potty Mouth!">
+					<text>Potty mouth! Where did you learn that?</text>
+					<speaker>Meagan</speaker>
+					<text>I'll potty mouth you! Why did the toilet roll go downstairs?</text>
+					<speaker>Alex</speaker>
+					<text>Why?</text>
+					<speaker>Meagan</speaker>
+					<text>To get to the bottom!</text>
+					<jump>jokes</jump>
+				</answer>
+				<answer label = "Gross">
+					<text>Gross!</text>
+					<jump>jokes</jump>
+				</answer>
+			</question>
+		</answer>
+		<answer label = "Go Away">
+			<text>Go Away, I'm busy.</text>
+			<speaker>Meagan</speaker>
+			<portrait>Meagan Angry</portrait>
+			<text>Fine. Meanie.</text>
+			<quit/>
+		</answer>
+		<answer label = "What?">
+			<text>What's up?</text>
+			<label>leave</label>
+			<speaker>Meagan</speaker>
+			<text>Isaac wants to see you next door! You should go see him.</text>
+			<speaker>Alex</speaker>
+			<text>Ok, I will.</text>
+			<quit/>
+		</answer>
+	</question>
+</dialogue>
+

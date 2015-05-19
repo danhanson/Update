@@ -14,6 +14,7 @@ namespace Update.Map {
 	public class Tile : AbstractTileBehavior {
 		
 		public Character character { get; internal set; }
+        public Item item { get; internal set; }
 
 		// called when a character begins heading towards this tile
 		// returns true if entry succeeds, otherwise returns false
@@ -46,7 +47,9 @@ namespace Update.Map {
 		public override void OnAction (Character c){
 			if (character != null) {
 				character.OnAction (c);
-			}
+			} else if(item != null){
+                item.OnAction(c);
+            }
 			foreach (TileBehavior t in gameObject.GetComponents<TileBehavior>()) {
 				t.OnAction(c);
 			}

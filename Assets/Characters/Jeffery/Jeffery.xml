@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Jeffery Angry</portrait>
+	<speaker>Alex</speaker>
+	<question speaker="Jeffery" value = "Alex! What are you doing here? You didn't get in trouble again, did you?">
+		<answer label = "Me?">
+			<portrait>Jeffery Meh</portrait>
+			<text>Who me? What would make you say something like that?</text>
+			<speaker>Jeffery</speaker>
+			<text>Oh I dunno. Maybe the fact that I've seen you arrested what, twelve times now?</text>
+			<speaker>Alex</speaker>
+			<text>Hey now. It was only six. Besides, it would have been a hell of a lot more if you hadn't stepped in like you did.</text>
+			<portrait>Jeffery Happy</portrait>
+			<label>jokes</label>
+			<question speaker="Jeffery" value = "Eh. Don't sweat it. Hey, what type of robbery is best?">
+				<answer label = "Um... None?">
+					<text>Um. Since I'm in a police station I'm gonna go with none.</text>
+					<label>joke</label>
+					<speaker>Jeffery</speaker>
+					<text>A SAFE robbery. Eh? Eh?</text>
+					<speaker>Alex</speaker>
+					<text>Wow. Just wow.</text>
+					<question value = "">
+						<answer label = "leave">
+							<quit/>
+						</answer>
+						<answer label = "joke">
+							<text>What did the police officer say to his belly button?</text>
+							<text>You are under a vest</text>
+							<portrait>Jeffery Happy</portrait>
+							<speaker>Jeffery</speaker>
+							<text>Wow. So funny. Much laughs. Try this one on for size.</text>
+							<text>What is black and always in the back of a police car?</text>
+							<text>The seat!</text>
+							<speaker>Alex</speaker>
+							<text>Aw man. You had me there.</text>
+							<question value = "">
+								<answer label = "leave">
+									<speaker>Jeffery</speaker>
+									<text>I am the joke king! See you buddy.</text>
+									<quit/>
+								</answer>
+								<answer label = "joke">
+									<text>What do you call a police officer with bugs?</text>
+									<text>Po-LICE</text>
+									<speaker>Jeffery</speaker>
+									<text>Ametuer. Take this one.</text>
+									<text>What do you call it when a prisoner takes his own mug shot?</text>
+									<text>A cellfie!</text>
+									<speaker>Alex</speaker>
+									<text>Terrible. Just Terrible.</text>
+									<question value = "">
+										<answer label = "leave">
+											<speaker>Jeffery</speaker>
+											<text>I am the joke king! See you buddy.</text>
+											<quit/>
+										</answer>
+										<answer label = "joke">
+											<text>What are a police officers main food groups?</text>
+											<text>Jelly, Powdered, glazed and chocolate frosted.</text>
+											<speaker>Jeffery</speaker>
+											<text>Ooof. That was a real shot bellow the belt. Or should I say belly.</text>
+											<text>One day I was giving a tour of the local court house. There was a court case in recces as I was showing the group around. </text>
+											<text>I showed them the lawyers, judge, stenographers, jury, and court clerk. “As you can see there are alot of different people that are involved in making this system work,” I commented.</text>
+											<text>At that point the prisoner  that was sitting there yelled out, “but I’m the one who makes it all happen!”</text>
+											<speaker>Alex</speaker>
+											<text>Wow. So done.</text>
+											<question value = "">
+												<answer label = "leave">
+													<speaker>Jeffery</speaker>
+													<text>I am the joke king! See you buddy.</text>
+													<quit/>
+												</answer>
+												<answer label = "joke">
+													<text>The police want to interview me.</text>
+													<text>Its strange. I didn't apply for a job there.</text>
+													<speaker>Jeffery</speaker>
+													<text>Nice! But I have to get back to work. You stay safe now!</text>
+													<quit/>
+												</answer>
+											</question>
+										</answer>
+									</question>
+								</answer>
+							</question>
+						</answer>
+					</question>
+				</answer>
+				<answer label = "I dunno.">
+					<text>I dunno...?</text>
+					<jump>joke</jump>
+				</answer>
+			</question>
+		</answer>
+		<answer label = "No">
+			<portrait>Jeffery Meh</portrait>
+			<text>Nope. Been clean for years now. As you well know.</text>
+			<speaker>Jeffery</speaker>
+			<portrait>Jeffery Meh</portrait>
+			<text>Alright. Just checking in man.</text>
+			<jump>jokes</jump>
+		</answer>
+		<answer label = "Yes">
+			<portrait>Jeffery Meh</portrait>
+			<text>Yep. Totally under arrest. Hence the hand cuffs. And escort.</text>
+			<text>What would make you say something like that?</text>
+			<speaker>Jeffery</speaker>
+			<text>Oh I dunno. Maybe the fact that I've seen you arrested what, twelve times now?</text>
+			<speaker>Alex</speaker>
+			<text>Hey now. It was only six. Besides, it would have been a hell of a lot more if you hadn't stepped in like you did.</text>
+			<jump>jokes</jump>
+		</answer>
+	</question>
+</dialogue>

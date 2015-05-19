@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Monica Happy</portrait>
+	<speaker>Alex</speaker>
+	<question speaker="Monica" value="Hello there. What can I do for you?">
+		<answer label="Look for person">
+			<label>Look</label>
+			<text>Oh I’m looking for someone. Can you give me directions? </text>
+			<question speaker = "Monica" value="Sure. Who are you looking for?">
+				<answer label="Emmanuel">
+					<text>Where is Emmanuel?</text>
+					<question speaker="Monica" value="Oh, he was in the northwest area last time I saw him. Anything else?">
+						<answer label="Look for person">
+							<jump>Look</jump>
+						</answer>
+						<answer label="You're fat.">
+							<jump>Fat</jump>
+						</answer>
+						<answer label="Nothing.">
+							<quit/>
+						</answer>
+					</question>
+				</answer>
+				<answer label="Anna">
+					<text>Where is Anna?</text>
+					<question speaker="Monica" value="Oh, she was in the south east area last time I saw her. Anything else?">
+						<answer label="Look for person">
+							<jump>Look</jump>
+						</answer>
+						<answer label="You're fat.">
+							<jump>Fat</jump>
+						</answer>
+						<answer label="Nothing.">
+							<quit/>
+						</answer>
+					</question>
+				</answer>
+				<answer label="Wallace">
+					<text>Where is Wallace?</text>
+					<question speaker="Monica" value="Why are you looking for that grump? He never has visitors...">
+						<answer label="He's a friend.">
+							<text>Oh, he is a friend I just haven't been able to see in a while. So... he is where?</text>
+							<question speaker="Monica" value="Your friend huh? Well ok then. He was in the southwest area last time I saw him. Anything else?">
+								<answer label="Look for person">
+									<jump>Look</jump>
+								</answer>
+								<answer label="You're fat.">
+									<jump>Fat</jump>
+								</answer>
+								<answer label="Nothing.">
+									<quit/>
+								</answer>
+							</question>
+						</answer>
+						<answer label="He's family.">
+							<text>He's family.</text>
+							<question speaker="Monica" value="...">
+								<answer label="I'm adopted.">
+									<text>I'm adopted. That's not a problem for you, is it?</text>
+									<speaker>Monica</speaker>
+									<text>No, no! Of course not. He was in the southwest area last time I saw him. Have a nice day!</text>
+									<!-- <action>MRIncrement</action> --> <!-- Should improve relation with monica by one -->
+									<quit/>
+								</answer>
+								<answer label="...">
+									<text>...</text>
+									<question speaker="Monica" value="Right. Well he's in the south west area. Anything else?">
+										<answer label="Look for person">
+											<jump>Look</jump>
+										</answer>
+										<answer label="You're fat.">
+											<jump>Fat</jump>
+										</answer>
+										<answer label="Nothing.">
+											<quit/>
+										</answer>
+									</question>
+								</answer>
+							</question>
+						</answer>
+					</question>	
+				</answer>
+				<answer label = "Mrs. Owens">
+					<text>Where is Mrs. Owens?</text>
+					<question speaker="Monica" value ="Oh, she was in the north east area last time I saw her. Careful, this whole update has her quite worked up.">
+						<answer label="...">
+							<text>...</text>
+							<question speaker="Monica" value="... Anything else?">
+								<answer label="Look for person">
+									<jump>Look</jump>
+								</answer>
+								<answer label="You're fat.">
+									<jump>Fat</jump>
+								</answer>
+								<answer label="Nothing.">
+									<quit/>
+								</answer>
+							</question>
+						</answer>
+						<answer label="Worked up?">
+							<text>What do you mean worked up? Is she ok?</text>
+							<!--<action>ORincrement</action>--> <!--Should increase relation with Mrs Owens by 1-->
+							<!--<action>CRincrement</action>--> <!--Should increase relation with Church by 1-->
+							<speaker>Monica</speaker>
+							<text>Oh yes, she's fine. Its just that she has very strong opinions about it being God's gift. She can get quite worked up.</text>
+							<speaker>Alex</speaker>
+							<question speaker="Monica" value="I'm not sure it is healthy for her. But, you can talk to her yourself. She can be found in the north east area. Anything else?">
+								<answer label="Look for person">
+									<jump>Look</jump>
+								</answer>
+								<answer label="You're fat.">
+									<jump>Fat</jump>
+								</answer>
+								<answer label="Nothing.">
+									<quit/>
+								</answer>
+							</question>
+						</answer>
+					</question>
+				</answer>
+			</question>
+		</answer>
+		<answer label="You're fat.">
+			<label>Fat</label>
+			<text>Lay off the doughnuts. Jeez! You're so fat, Goodyear wanted to fly you over the Superbowl.</text>
+			<speaker>Monica</speaker>
+			<portrait>Monica Angry</portrait>
+			<text>*Gasp* Rude!</text>
+			<quit/>
+		</answer>
+		<answer label="Nothing.">
+			<quit/>
+		</answer>
+	</question>
+</dialogue>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Felix Meh</portrait>
+	<speaker>Alex</speaker>
+	<question speaker = "Felix" value = "What do you want?">
+		<answer label = "Nothing">
+			<text>"Nothing sir."</text>
+			<quit/>
+		</answer>
+		<answer label = "Answers">
+			<text>I want some answers. What the hell is this update thing?</text>
+			<question speaker="Felix" value = "I have no information for the general public at this time.">
+				<answer label = "For me?">
+					<text>What about for me?</text>
+					<speaker>Felix</speaker>
+					<text>Yeah, no.</text>
+					<quit/>
+				</answer>
+				<answer label = "bull shit">
+					<text>Yeah, thats bull shit. Whats going on?</text>
+					<portrait>Felix Angry</portrait>
+					<question speaker = "Felix" value = "I said we have no information for you. Now buzz off!">
+						<answer label = "yeah, no.">
+							<text>Yeah, no. Fess up.</text>
+							<speaker>Felix</speaker>
+							<text>No.</text>
+							<quit/>
+						</answer>
+						<answer label = "Spill it">
+							<text>Brrrooooooo. Come on. Spill it. You can trust me...</text>
+							<speaker>Felix</speaker>
+							<text>No.</text>
+							<quit/>
+						</answer>
+						<answer label = "ok">
+							<text>Ok.</text>
+							<quit/>
+						</answer>
+						<answer label = "please?">
+							<text>Please? I need to know so I can take care of my sister.</text>
+							<portrait>Felix Meh</portrait>
+							<speaker>Felix</speaker>
+							<text>*Sigh* Look kid. I don't have anything for you. Go look somewhere else for your answers.</text>
+							<quit/>
+						</answer>
+					</question>
+				</answer>
+				<answer label = "ok">
+					<text>Ok. I'll just be on my way then.</text>
+					<quit/>
+				</answer>
+			</question>
+		</answer>
+	</question>
+</dialogue>

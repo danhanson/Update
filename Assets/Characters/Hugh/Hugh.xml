@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Hugh Happy</portrait>
+	<speaker>Hugh</speaker>
+	<text>Hey there!</text>
+	<portrait>Hugh Meh</portrait>
+	<text>Are you freaking out about the end of the world, too? </text>
+	<text>You know, that update thing everyone has in the corner of their vision?</text>
+	<text>Honestly, I think it's silly.</text>
+	<text>I mean, does your computer blow up after you install an update?</text>
+	<text>No! It works better than before!</text>
+	<text>The world should take a giant chill pill.</text>
+
+	<question value="Don't you think so?">
+		<answer label="Yep.">
+			<speaker>Alex</speaker>
+			<text>Yeah, definitely.</text>
+			<speaker>Hugh</speaker>
+			<portrait>happy</portrait>
+			<text>I'm glad someone else is on my side on this!</text>
+			<text>Positive outlooks for the win, you know what I'm sayin'?</text>
+
+			<question value="Hey, since you're a positive guy, would you like to hear some jokes?">
+				<answer label="Yeah, sure.">
+					<speaker>Alex</speaker>
+					<text>Yeah, sure.</text>
+					<speaker>Hugh</speaker>
+					<text>Great!</text>
+					<label>JOKES</label>
+					<text>What do you call the guards at Samsung?</text>
+					<text>The guardians of the galaxy!</text>
+
+					<text>What sound does a nut make when it sneezes?</text>
+					<text>Cashew!</text>
+
+					<text>I’m looking for a job cleaning mirrors. Its something I could really see myself doing.</text>
+					<text>...</text>
+					<jump>HUGH GOODBYE</jump>
+					
+				</answer>
+				<answer label="Wait, what?">
+					<speaker>Hugh</speaker>
+					<text>Wait, what?</text>
+					<speaker>Hugh</speaker>
+					<jump>HUGH GOODBYE</jump>
+
+				</answer>
+				<answer label="I gotta go.">
+				<speaker>Alex</speaker>
+				<text>I gotta go.</text>
+				<speaker>Hugh</speaker>
+				<jump>HUGH GOODBYE</jump>
+				
+				</answer>
+				
+				</question>
+				
+			</answer>
+			
+		<answer label="Nope.">
+			<speaker>Alex</speaker>
+			<text>Nope.</text>
+			<speaker>Hugh</speaker>
+			<text>Well, I'm sorry you're going to be all negative about it.</text>
+			<text>Lighten up a little, would you?</text>
+		</answer>
+		
+		<answer label="You sure do talk a lot.">
+			<speaker>Alex</speaker>
+			<text>You sure do talk a lot.</text>
+			<portrait>Hugh Meh</portrait>
+			<speaker>Hugh</speaker>
+			<text>Huh? Well, I guess I do.</text>
+			<text>I'm just trying to keep a positive outlook is all. I mean, this update is really bringing out the weirdoes.</text>
+			<text>Though Mom did say that there are a lot of weirdoes in college regardless.</text>
+			<text>It's possible everyone's acting weird just because that's the way they are.</text>
+			<text>Pretty scary thought, though.</text>
+			
+			<question value="I wouldn't want the world to be populated by weirdoes, would you?">
+				<answer label="Nope">
+				<speaker>Alex</speaker>
+				<text>Nope.</text>
+				<speaker>Hugh</speaker>
+				<text>Yeah, seriously. Especially the ones we have around here.</text>
+				<text>Just take care of yourself, ok, buddy?</text>
+				<text>We don't want those weirdoes coming after you next.</text>
+				</answer>
+				
+				<answer label="Weirdoes can be fun">
+					<speaker>Alex</speaker>
+					<text>Weirdoes can be fun.</text>
+					<portrait>Hugh Meh</portrait>
+					<speaker>Hugh</speaker>
+					<text>...I dunno, maybe. But you should meet some of these people, dude.</text>
+					<text>Like that one guy over there...</text>
+					<text>And her...</text>
+					<text>And man you should just STAY AWAY from that one girl.</text>
+					
+					<question value="But at least you look kind of normal.">
+						<answer label="Yeah, I'm pretty normal.">
+							<speaker>Alex</speaker>
+							<text>Yeah, I'm pretty normal.</text>
+							<portrait>Hugh Happy</portrait>
+							<speaker>Hugh</speaker>
+							<text>Yeah, that's what I thought!</text>
+							<text>But yeah most people around here aren't. You better be careful.</text>
+							</answer>
+							
+						<answer label="Can I leave now?">
+							<speaker>Alex</speaker>
+							<text>Can I leave now?</text>
+							<speaker>Hugh</speaker>
+							<text>Leave...?</text>
+							<jump>HUGH GOODBYE</jump>
+							</answer>
+
+						<answer label="Well.. haven't killed anyone today.">
+							<speaker>Alex</speaker>
+							<text>Well.. haven't killed anyone today.</text>
+							<portrait>Hugh Meh</portrait>
+							<speaker>Hugh</speaker>
+							<text>Huh?</text>
+							<portrait>Hugh Happy</portrait>
+							<text>Oh, haha! I get it. It's a joke! I'm pretty good with jokes. Want to hear some?</text>
+							<jump>JOKES</jump>
+							
+						</answer>
+						
+						</question>
+					
+					</answer>
+					
+				<answer label="Good gravy do you ever shut your yap?">
+					<speaker>Alex</speaker>
+					<text>Good gravy do you ever shut your yap?</text>
+					
+					<label>HUGH GOODBYE</label>
+					
+					<portrait>Hugh Happy</portrait>
+					<speaker>Hugh</speaker>
+					<text>Oh, sorry! It's just hard for me to stop talking once I start.</text>
+					<text>I'll leave you alone now, I guess.</text>
+					<text>Just don't worry too much about the update, you know?</text>
+					<text>Too much worrying will give you ulcers!</text>
+					<text>Well, until we meet again.</text>
+					</answer>
+					</question>
+					
+		</answer>
+		
+	</question>
+	
+</dialogue>

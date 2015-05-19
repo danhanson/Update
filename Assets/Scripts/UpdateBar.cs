@@ -30,7 +30,7 @@ public class UpdateBar : MonoBehaviour {
 		tempTime = tempTime + (int)Time.time - lastTime;
 		lastTime = (int)Time.time;
 		PlayerPrefs.SetInt ("TimePassed", tempTime);
-		barDisplay = tempTime*0.00009920634f;
+		barDisplay = tempTime*(1.0f/3600);
 		if (barDisplay >= 1) {
 			//End the game
 		}

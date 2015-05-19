@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Ana Meh</portrait>
+	<speaker>Ana</speaker>
+	<label>START</label>
+	<question value = "Can I help you?">
+		<answer label = "Wallace">
+			<speaker>Alex</speaker>
+			<text>I am looking for Wallace. Have you seen him?</text>
+			<speaker>Ana</speaker>
+			<text>He is in the south west area. Let me know if you need anything else!</text>
+			<quit/>
+		</answer>
+		<answer label = "Mrs Owens">
+			<speaker>Alex</speaker>
+			<text>She is in the north east area. Let me know if you need anything else!</text>
+			<quit/>
+		</answer>
+		<answer label = "Bedside manner">
+			<speaker>Alex</speaker>
+			<text>You seem very brusque. Hope that doesn't affect your bedside manner...</text>
+			<speaker>Ana</speaker>
+			<portrait>Ana Angry</portrait>
+			<text>I don't mean to be rude. I'm just very busy. We are short, and I don't have time to spare. So, can I help you or not?</text>
+			<jump>START</jump>
+		</answer>
+		<answer label = "Nope">
+			<speaker>Alex</speaker>
+			<text>Nope. Sorry for bothering you!</text>
+			<quit/>
+		</answer>
+	</question>
+</dialogue>

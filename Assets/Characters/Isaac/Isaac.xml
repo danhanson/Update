@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Isaac Happy</portrait>
+	<speaker>Alex</speaker>
+	<question speaker="Isaac" value = "Yo. What up dog?">
+		<answer label = "Not much bro. You?">
+			<text>Not much man. What's up with you?</text>
+			<speaker>Isaac</speaker>
+			<text>You know. Buisness. This whole update thing has been good. Lotsa people looking for a way to take their minds off it.</text>
+			<label>update?</label>
+			<speaker>Alex</speaker>
+			<question speaker="Isaac" value = "What do you think is going on?">
+				<answer label = "God">
+					<text>Clearly the lord is working his will upon the world.</text>
+					<portrait>Isaac Meh</portrait>
+					<speaker>Isaac</speaker>
+					<question value = "Are you sure?">
+						<speaker>Alex</speaker>
+						<answer label = "Yes">
+							<text>Yes. I have no doubts.</text>
+							<label>father</label>
+							<speaker>Isaac</speaker>
+							<text>Well. You should go talk to Father Owens the next town over then. He'll probably have stuff you'd find interesting.</text>
+							<text>You can find the road there in the north west area, through the woods. You'll know its the right one cause it turns into a dirt road after a while.</text>
+							<jump>goodbye</jump>
+						</answer>
+						<answer label = "No">
+							<text>Well, no. I'm not completely sure.</text>
+							<speaker>Isaac</speaker>
+							<text>Well. You should go talk to Charlotte Owens. She'll probably have stuff you'd find interesting.</text>
+							<text>You can find her in the retirement home on the western side of town. Its a huge brown building. Can't miss it.</text>
+							<jump>goodbye</jump>
+						</answer>
+					</question>
+				</answer>
+				<answer label = "Nothing.">
+					<text>This update means nothing. Life goes on. You know?</text>
+					<speaker>Isaac</speaker>
+					<text>I hear you man. And if it is something, what are we gonna do about it, right?</text>
+					<jump>goodbye</jump>
+				</answer>
+				<answer label = "Dunno">
+					<text>I dunno man. But I'll tell you what man. I'm freaking out about it.</text>
+					<speaker>Alex</speaker>
+					<question speaker="Isaac" value = "Well, you want something to make it go down easier?">
+						<answer label = "nah.">
+							<text>Nah. I'm ok. I wanna know whats going on. Not ignore it.</text>
+							<label>answers</label>
+							<text>Well. You should go talk to Chief Duffy. I heard a rumour that he knows what's going on. Some sort of government thing.</text>
+							<text>You can find him in the North east area. But if you hit the college campus you've gone too far!</text>
+							<jump>goodbye</jump>
+						</answer>
+						<answer label = "Yes!">
+							<text>Hell yes. I need to get my mind off this shit.</text>
+							<text>Well. You should go talk to Mike. I heard he's setting up an insane party at the college campus.</text>
+							<text>You can find him in the frat house on campus. The campus is in the north east area, and the frat is on the north western corner of campus.</text>
+							<jump>goodbye</jump>
+						</answer>
+					</question>
+				</answer>
+			</question>
+		</answer>
+		<answer label = "Worrying">
+			<text>I'm worrying about this whole update thing. Especially Megan. I don't like to think that something might happen to her.</text>
+			<question speaker="Isaac" value = "Well, what are you gonna do about it?">
+				<answer label = "Dunno">
+					<text>I don't know man. I gotta figure it out though. I guess I'm gonna go figure out what's going on.</text>
+					<jump>answers</jump>
+				</answer>
+				<answer label = "Use friends">
+					<text>I guess I'm just gonna have to count on friends. I know you'll keep her safe man.</text>
+					<question speaker="Isaac" value = "And the rest of the gang too. You know we're family.">
+						<answer label = "Of course">
+							<text>Thats true. I know all you guys have my back.</text>
+							<speaker>Isaac</speaker>
+							<jump>update?</jump>
+						</answer>
+						<answer label = "sure">
+							<text>Yeah... I guess.</text>
+							<portrait>Isaac Meh</portrait>
+							<jump>update?</jump>
+						</answer>
+						<answer label = "No">
+							<text>I trust you man. The rest of them... No. Not with Megan.</text>
+							<portrait>Isaac Angry</portrait>
+							<question speaker="Isaac" value = "What do you mean man?">
+								<answer label = "Your family">
+									<text>Its your family. Not mine man.</text>
+									<speaker>Isaac</speaker>
+									<text>Fuck you man. It was supposed to be our family.</text>
+									<quit/>
+								</answer>
+								<answer label = "Its Megan">
+									<text>Its Megan man. I trust them with my life everyday. But this is Megan man. I barely trust her to myself.</text>
+									<speaker>Issaac</speaker>
+									<portrait>Isaac Meh</portrait>
+									<text>Alright. Alright. I hear yeah.</text>
+									<jump>update?</jump>
+								</answer>
+							</question>
+						</answer>
+					</question>
+				</answer>
+				<answer label = "pray">
+					<text>Pray. The lord will provide for us.</text>
+					<jump>father</jump>
+				</answer>
+			</question>
+		</answer>
+	</question>
+	<label>goodbye</label>
+	<speaker>Alex</speaker>
+	<text>Alright man. I'll do that.</text>
+	<speaker>Isaac</speaker>
+	<text>Cool. Be careful out there. You hear? I don't wanna end up taking care of Megan.</text>
+	<speaker>Alex</speaker>
+	<text>You got it bro. See you later.</text>
+	<quit/>
+</dialogue>

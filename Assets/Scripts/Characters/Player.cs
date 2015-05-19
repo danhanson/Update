@@ -19,6 +19,7 @@ namespace Update.Characters {
 		}
 
 		public void MoveTo(Vector pos){
+			Debug.Log("MOVE TO"+pos.ToString());
 			Index = pos;
 		}
 	}

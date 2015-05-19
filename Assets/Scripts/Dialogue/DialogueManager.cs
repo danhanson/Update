@@ -6,6 +6,8 @@ using Update.Characters;
 
 namespace Update.Dialogue {
 
+	// XXX: Make sure the scene has an event system somewhere
+	// for this to work
 	public class DialogueManager : MonoBehaviour {
 
 		// we may need to add special scripts to some of these

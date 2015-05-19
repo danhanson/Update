@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Mike Happy</portrait>
+	<speaker>Mike</speaker>
+	<text>Dude! Congrats man! You've just been invited to the biggest rager ever. Tonight.</text>
+	<question value="It's gonna be siiick.">
+	
+		<answer label="What are you talking about?">
+			<speaker>Alex</speaker>
+			<text>What are you talking about?</text>
+				<speaker>Mike</speaker>
+				<text>Don't tell me you haven't heard, man! It's the end of the world and we're going out with a bang, Rho Beta Rho style.</text>
+				<label>MIKE INVITE</label>
+				
+				<question value="So are you in or what?">
+				
+					<answer label="I'll definitely be there, dude.">
+						<speaker>Alex</speaker>
+						<text>I'll definitely be there, dude.</text>
+						<speaker>Mike</speaker>
+						<text>Yeeeeeaaah broooo!!</text>
+						</answer>
+						
+					<answer label="Parties really aren't my scene.">
+						<speaker>Alex</speaker>
+						<text>Parties really aren't my scene.</text>
+						<speaker>Mike</speaker>
+						<portrait>Mike Surprised</portrait>
+						<text>Really?</text>
+						<text>Well, it's your choice, man. If you change your mind you know where I am.</text>
+						</answer>
+					</question>
+			</answer>
+			
+		<answer label="Duude, that's so tight.">
+			<speaker>Alex</speaker>
+			<text>Duude, that's so tight.</text>
+			<speaker>Mike</speaker>
+			<text>Hell yeah it is.</text>
+			<jump>MIKE INVITE</jump>
+			</answer>
+			
+		<answer label="Was that English?">
+			<speaker>Alex</speaker>
+			<text>Was that English?</text>
+			<portrait>Mike Surprised</portrait>
+			<speaker>Mike</speaker>
+			<text>Huh?</text>
+			<portrait>Mike Angry</portrait>
+			<question value="Dude, way to be a buzz kill. Never mind, I'm striking you from the invite list.">
+			
+			<answer label="Aw, come on man. I'm just playing.">
+				<speaker>Alex</speaker>
+				<text>Aw, come on man. I'm just playing.</text>
+				<portrait>Mike Meh</portrait>
+				<speaker>Mike</speaker>
+				<text>...</text>
+				<portrait>Mike Happy</portrait>
+				<text>I was too, man.</text> 
+				<jump>MIKE INVITE</jump>
+				</answer>
+				
+			<answer label="I didn't want to come to whatever you're planning anyway, brodude.">
+				<speaker>Alex</speaker>
+				<text>I didn't want to come to whatever you're planning anyway, brodude.</text>
+				<speaker>Mike</speaker>
+				<text>Good! We don't want guys like you around, anyway!</text>
+				</answer>
+				
+			<answer label="No, seriously. I have never heard those words before in my life.">
+				<speaker>Alex</speaker>
+				<text>No, seriously. I have never heard those words before in my life.</text>
+				<portrait>Mike Surprised</portrait>
+				<speaker>Mike</speaker>
+				<text>Really?</text>
+				<portrait>Mike Happy</portrait>
+				<text>What sort of sheltered life have you been living?</text>
+				<text>I'm talking about a big party, man. Everyone's invited. Even you.</text>
+				<jump>MIKE INVITE</jump>
+				</answer>
+			</question>
+			
+			</answer>
+			
+			
+		<answer label="What's the catch?">
+			<speaker>Alex</speaker>
+			<text>What's the catch?</text>
+			<portrait>Mike Surprised</portrait>
+			<speaker>Mike</speaker>
+			<text>What? Catch?</text>
+			<portrait>Mike Happy</portrait>
+			<text>No catch at all! Just trying to have some fun before the big kaboom.</text>
+			<text>Since you know. Inching bar of death.</text>
+			<jump>MIKE INVITE</jump>
+			</answer>
+		
+		</question>
+</dialogue>

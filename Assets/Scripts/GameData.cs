@@ -4,7 +4,7 @@ using Update.Map;
 namespace Update {
 	public static class GameData
 	{
-		public static TileMap map = new TileMap (31, 31);
+		public static TileMap map = new TileMap (127, 127);
 	}
 }
 

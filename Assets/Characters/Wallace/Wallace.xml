@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Wallace Meh</portrait>
+	<label>START</label>
+	<speaker>Wallace</speaker>
+	<question value="...">
+		<answer label="...">
+			<speaker>Alex</speaker>
+			<text>...</text>
+			<jump>...</jump>
+		</answer>
+		<answer label="Rifle">
+			<speaker>Alex</speaker>
+			<text>That is a beautiful rifle.</text>
+			<speaker>Wallace</speaker>
+			<question value="My service rifle is not for sale.">
+				<answer label="Its a M1 right?">
+					<speaker>Alex</speaker>
+					<text>That's an M1 Garand, yeah? That's an amazing gun.</text>
+					<speaker>Wallace</speaker>
+					<question value="Good eye. That beauty got me through a lot of tough scrapes.">
+						<answer label="I bet.">
+							<speaker>Alex</speaker>
+							<text>I believe it. That gun had no equal.</text>
+							<jump>START</jump>
+						</answer>
+						<answer label="Nasty?">
+							<speaker>Alex</speaker>
+							<text>Nasty scrapes?</text>
+							<speaker>Wallace</speaker>
+							<question value = "Bloody.">
+								<answer label = "Stories?">
+									<speaker>Alex</speaker>
+									<text>Sounds awesome! You must have some insane stories...</text>
+									<speaker>Wallace</speaker>
+									<question value="Oh yes. Many Stories.">
+										<answer label="Share?">
+											<speaker>Alex</speaker>
+											<text>Would you care to share?</text>
+											<speaker>Wallace</speaker>
+											<text>No.</text>
+											<jump>START</jump>
+										</answer>
+										<answer label="...">
+											<speaker>Alex</speaker>
+											<text>...</text>
+											<question speaker="Wallace" value = "I remember one time. We were taking a hill held by the gooks. Nasty one too. Had a couple of MG nests.">
+												<answer label = "...">
+													<text>...</text>
+													<!-- <action>WRIncrement</action>-->
+													<speaker>Alex</speaker>
+													<question speaker="Wallace" value = "My platoon started up the hill. Me and my buddy Frank were the only ones who made it up. And we weren’t exactly intact.">
+														<answer label="...">
+															<text>...</text>
+															<question speaker="Wallace" value = "Sniper got Frank the next day. Day after that I heard we were both being put up for the silver star.">
+																<answer label = "Holy cow!">
+																	<text>Holy cow! Can I see it?</text>
+																	<speaker>Wallace</speaker>
+																	<text>No.</text>
+																	<quit/>
+																</answer>
+																<answer label = "...">
+																	<text>...</text>
+																	<jump>...</jump>
+																</answer>
+															</question>
+														</answer>
+														<answer label="Nasty.">
+															<text>Nasty stuff.</text>
+															<speaker>Wallace</speaker>
+															<text>Mmmm.</text>
+															<jump>START</jump>
+														</answer>
+													</question>
+												</answer>
+												<answer label = "Sounds bad.">
+													<text>Sounds bad.</text>
+													<speaker>Wallace</speaker>
+													<text>It was.</text>
+													<jump>START</jump>
+												</answer>
+											</question>
+										</answer>
+									</question>
+								</answer>
+							</question>
+						</answer>
+					</question>
+				</answer>
+				<answer label = "Its an AR2 right?">
+					<speaker>Alex</speaker>
+					<text>I'd know an AR2 anywhere. Its nice.</text>
+					<speaker>Wallace</speaker>
+					<portrait>Wallace Angry</portrait>
+					<text>No its not. You don't know shit about guns.</text>
+					<quit/>
+				</answer>
+				<answer label = "Scary!">
+					<speaker>Alex</speaker>
+					<text>Oh no. Wouldn't dream of it. People shouldn't own guns. They're dangerous!</text>
+					<speaker>Wallace</speaker>
+					<text>Yeah. People are.</text>
+					<quit/>
+				</answer>
+			</question>
+		</answer>
+		<answer label = "Update">
+			<speaker>Alex</speaker>
+			<text>What do you think of the update?</text>
+			<speaker>Wallace</speaker>
+			<text>Pff. Anyone who says they know what is going on with that is full of shit. Ain't no way to know what's coming.</text>
+			<speaker>Alex</speaker>
+			<text>But what about the whole rumour of it being god's gift?</text>
+			<speaker>Wallace</speaker>
+			<text>I'll tell you one thing. If it were some gift from god he sure as hell isn't being selective about it. Too many good people, passed away already.</text>
+			<text>Too many bad people. Still here.</text>
+			<speaker>Alex</speaker>
+			<question speaker="Wallace" value = "You don't buy that crap, do you?">
+				<answer label = "No!">
+					<text>No. Its a ridiculous theory.</text>
+					<speaker>Wallace</speaker>
+					<text>Glad to see you have some sense!</text>
+					<jump>START</jump>
+				</answer>
+				<answer label = "Yes!">
+					<text>Of course I believe it! The lord is clearly at work amongst us.</text>
+					<portrait>Wallace Angry</portrait>
+					<speaker>Wallace</speaker>
+					<text>Damn fool.</text>
+					<quit/>
+				</answer>
+			</question>
+			<text>But what about the whole rumour of it being god's gift?</text>
+		</answer>
+	</question>
+	<label>...</label>
+	<speaker>Alex</speaker>
+	<question speaker="Wallace" value="...">
+		<answer label = "So...">
+			<text>So...</text>
+			<speaker>Wallace</speaker>
+			<text>What?</text>
+			<jump>START</jump>
+		</answer>
+		<answer label = "...">
+			<text>...</text>
+			<question speaker="Wallace" value="...">
+				<answer label = "So...">
+					<text>So...</text>
+					<speaker>Wallace</speaker>
+					<text>What?</text>
+					<jump>START</jump>
+				</answer>
+				<answer label = "...">
+					<text>...</text>
+					<speaker>Wallace</speaker>
+					<portrait>Wallace Happy</portrait>
+					<text>Good talk kid. I like you.</text>
+					<quit/>
+				</answer>
+			</question>
+		</answer>
+	</question>
+</dialogue>

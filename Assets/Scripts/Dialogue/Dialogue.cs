@@ -5,6 +5,7 @@ using System.Xml;
 using UnityEngine;
 using UnityEngine.Events;
 using Update.Action;
+using Update.Characters;
 
 namespace Update.Dialogue {
 
@@ -22,24 +23,32 @@ namespace Update.Dialogue {
 		public TextAsset xmlFile;
 		public GameObject managerObject;
 
-		private SortedDictionary<string,UpdateAction> actionDict;
-		private SortedDictionary<string,Sprite> portraitDict;
-		private SortedDictionary<string,UpdateQuery> queryDict;
+		protected SortedDictionary<string,UpdateAction> actionDict;
+		protected SortedDictionary<string,Sprite> portraitDict;
+		protected SortedDictionary<string,UpdateQuery> queryDict;
 
-		private DialogueManager manager;
-		private string speaker;
+		protected DialogueManager manager;
+		protected Character character;
+		protected UnityAction quit;
+		protected string speaker;
 		protected delegate void ReadXML(XmlNode node, Dialogue d, UnityAction onFinished);
 
 		public void Apply(){
 			XmlDocument xml = new XmlDocument ();
 			xml.LoadXml (xmlFile.text);
-			Parse (xml.SelectSingleNode("/dialogue").FirstChild,this,manager.Quit);
+			character.enabled = false;
+			Parse (xml.SelectSingleNode("/dialogue").FirstChild,this,quit);
 		}
 
-		private static void Parse(XmlNode node, Dialogue d, UnityAction onFinished){
+		protected static void Parse(XmlNode node, Dialogue d, UnityAction onFinished){
 			if (node != null)
-				parser [node.Name] (node, d, onFinished);
-			else
+				try {
+					//Debug.Log(node.Name);
+					parser [node.Name] (node, d, onFinished);
+				} catch(KeyNotFoundException e){
+					throw new XmlException("Invalid node name: \""+node.Name+"\"",e);
+				}
+			else if(onFinished != null)
 				onFinished();
 		}
 
@@ -50,6 +59,14 @@ namespace Update.Dialogue {
 				};
 			else
 				return onFinished;
+		}
+
+		protected static string getAttr(XmlNode node, string attr){
+			XmlAttribute a = node.Attributes[attr];
+			if(a == null)
+				return null;
+			else
+				return a.InnerText.Trim();
 		}
 
 		protected static SortedDictionary<string,ReadXML> parser = new SortedDictionary<string,ReadXML>
@@ -73,9 +90,11 @@ namespace Update.Dialogue {
 				}
 			},
 			{ "question", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
-						XmlAttribute question = node.Attributes["value"];
-                        if(question != null && question.InnerText.Trim() != "")
-							d.manager.AddDialogue(d.speaker,question.InnerText.Trim());
+						string question = getAttr(node,"value");
+						string qspeaker = getAttr(node,"speaker");
+						string speaker = (qspeaker == null || qspeaker == "") ? d.speaker : qspeaker;
+                        if(question != null && question != "")
+							d.manager.AddDialogue(speaker,question);
 						UnityAction afterQuestion = delegate{
 							Parse(node.NextSibling,d,onFinished);
 						};
@@ -103,18 +122,18 @@ namespace Update.Dialogue {
                     foreach(XmlNode labelNode in labelNodes){
                         if(labelNode.InnerText.Trim() == node.InnerText.Trim()){
                             theNode = labelNode;
-                            Parse(theNode.NextSibling, d, d.manager.Quit);
+                            Parse(theNode.NextSibling, d, d.quit);
 							return;
                         }
                     }
                     if(theNode == null){
-                        d.manager.Quit();
+                        d.quit();
                         throw new XmlException("No Label Tage found with text=\""+node.InnerText.Trim());
                     }
                 }
 			},
             { "quit", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
-                   d.manager.Quit();
+                   d.quit();
                 }
             },
             { "label", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
@@ -145,7 +164,7 @@ namespace Update.Dialogue {
 								return;
 							}
 						} else {
-							throw new XmlException("only case nodes or default node may be child of query node");
+							Parse(next,d,null);
 						}
 					}
 					if(next == null){
@@ -164,11 +183,20 @@ namespace Update.Dialogue {
 			{ "default", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
 					throw new XmlException("default node must be direct child of query node");
 				}
+			},
+			{ "#comment", delegate(XmlNode node, Dialogue d, UnityAction onFinished){
+					Parse(node.NextSibling, d, onFinished);
+				}
 			}
 		};
 		
 		public void Start(){
 			manager = managerObject.GetComponent<DialogueManager>();
+			character = gameObject.GetComponent<Character>();
+			quit = delegate{
+				manager.Quit();
+				character.enabled = true;
+			};
 			portraitDict = new SortedDictionary<String, Sprite> ();
 			foreach (Portrait p in portraits) {
 				portraitDict [p.name] = p.sprite;

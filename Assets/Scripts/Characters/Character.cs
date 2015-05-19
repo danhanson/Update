@@ -1,10 +1,13 @@
 using System;
 using Update.Map;
+using Update.Dialogue;
 
 namespace Update.Characters
 {
-	public abstract class Character : InMap
+	public abstract class Character : InMap, ActionListener
 	{
+
+		private Dialogue.Dialogue d;
 		
 		public override Vector Index {
 			get { return base.Index; }
@@ -21,13 +24,14 @@ namespace Update.Characters
 			return facing.DirectionVector () + Index;
 		}
 
-		// do an action on this character
 		public virtual void OnAction(Character o){
-			// do nothing
+			if(d)
+				d.Apply();
 		}
 
 		public virtual void Start(){
 			tile ().character = this;
+			d = GetComponent<Dialogue.Dialogue>();
 		}
 	}
 }

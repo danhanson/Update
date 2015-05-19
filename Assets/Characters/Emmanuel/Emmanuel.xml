@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<label>START</label>
+	<portrait>Emmanuel Meh</portrait>
+	<speaker>Alex</speaker>
+	<question speaker="Emmanuel" value = "Hello, my name is Emmanuel. You are called?">
+		<answer label = "Alex">
+			<text>I'm Alex. What do you do here?</text>
+			<speaker>Alex</speaker>
+			<question speaker="Emmanuel" value ="I am Nurse for many patients on my floor. It is good job.">
+				<answer label = "Wonderful">
+					<text>That's wonderful. I'm glad you enjoy such an important job.</text>
+					<speaker>Emmanuel</speaker>
+					<portrait>Emmanuel Happy</portrait>
+					<text>It is wonderful. I am very happy here. But it is hard some days.</text>
+					<speaker>Alex</speaker>
+					<text>Hard days?</text>
+					<portrait>Emmanuel Meh</portrait>
+					<speaker>Emmanuel</speaker>
+					<text>Yes. There are many people to care for. And sometimes things go wrong.</text>
+					<speaker>Alex</speaker>
+					<text>Like what?</text>
+					<speaker>Emmanuel</speaker>
+					<text>Well, a common thing is Chris. Chris sometimes wander off. He can be very hard to track down. And he has dementia so convincing him to come home very difficult.</text>
+					<speaker>Alex</speaker>
+					<text>Well, if I ever see him I'll try to get him to come here.</text>
+					<speaker>Emmanuel</speaker>
+					<portrait>Emmanuel Happy</portrait>
+					<text>Thank you very much. This could help me very.</text>
+				</answer>
+				<answer label = "scrub">
+					<text>Wow. What a lame job.</text>
+					<portrait>Emmanuel Angry</portrait>
+					<speaker>Emmanuel</speaker>
+					<text>I am sorry you feel that way. Goodbye.</text>
+					<quit/>
+				</answer>
+			</question>
+		</answer>
+		<answer label = "Joke">
+			<text>Did you hear about the Mexican train killer? </text>
+			<speaker>Emmanuel</speaker>
+			<text>I don't understand?</text>
+			<speaker>Alex</speaker>
+			<text>He had locomotives!</text>
+			<speaker>Emmanuel</speaker>
+			<portrait>Emmanuel Happy</portrait>
+			<question speaker="Emmanuel" value = "Oooohhh. It is joke, yes? Tell more!">
+				<answer label = "Ok">
+					<speaker>Alex</speaker>
+					<text>What do you call a Mexican with a rubber toe?</text>
+					<text>Roberto!</text>
+					<question speaker="Emmanuel" value = "This is very fun! Tell more!">
+						<answer label = "ok">
+							<jump>Offended</jump>
+						</answer>
+						<answer label = "No">
+							<speaker>Alex</speaker>
+							<text>Sorry, I have to go. No more jokes for now.</text>
+							<quit/>
+						</answer>
+					</question>
+				 </answer>
+				<answer label = "racist">
+					<label>Offended</label>
+					<speaker>Alex</speaker>
+					<text>What's a Mexican's favourite sport?</text>
+					<text>Cross Country!</text>
+					<portrait>Emmanuel Angry</portrait>
+					<speaker>Emmanuel</speaker>
+					<question speaker="Emmanuel" value = "This is very mean!">
+						<answer label = "tell more">
+							<text>Why doesn’t Mexico have an Olympic team?</text>
+							<text>Because everyone who can run, jump, and swim has already crossed the border!</text>
+							<speaker>Emmanuel</speaker>
+							<text>Goodbye</text>
+							<quit/>
+						</answer>
+						<answer label = "leave">
+							<text>Whatever.</text>
+							<quit/>
+						</answer>
+						<answer label = "Sorry">
+							<text>I'm sorry. I didn't mean to offend you.</text>
+							<portrait>Emmanuel Meh</portrait>
+							<speaker>Emmanuel</speaker>
+							<text>It is ok. I need to go now.</text>
+							<quit/>
+						</answer>
+					</question>
+				</answer>	
+			</question>
+		</answer>
+	</question>
+</dialogue>

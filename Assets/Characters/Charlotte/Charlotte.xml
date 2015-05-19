@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Charlotte Meh</portrait>
+	<speaker>Mrs Owens</speaker>
+	<question value = "Excuse me dear. Do you have a minute?">
+		<answer label = "Of course.">
+			<speaker>Alex</speaker>
+			<text>Of course Ma'am. What can I do for you?</text>
+			<jump>one</jump>
+		</answer>
+		<answer label = "What?">
+			<speaker>Alex</speaker>
+			<text>What is it lady?</text>
+			<portrait>Charlotte Angry</portrait>
+			<jump>one</jump>
+		</answer>
+		<answer label = "Not right now.">
+			<speaker>Alex</speaker>
+			<text>I'm sorry Ma'am, but I really don't right now. Please, excuse me.</text>
+			<quit/>
+		</answer>
+		<answer label = "Go away.">
+			<speaker>Alex</speaker>
+			<text>Go away. Old crone.</text>
+			<portrait>Charlotte Angry</portrait>
+			<quit/>
+		</answer>
+	</question>
+	<label>one</label>
+	<speaker>Alex</speaker>
+	<question speaker = "Mrs Owens" value = "Have you by any chance seen my son, Father Owens?">
+		<answer label = "No.">
+			<text>I haven't Ma'am. Would you like me to look for him?</text>
+			<portrait>Charlotte Happy</portrait>
+			<question speaker = "Mrs Owens" value = "Well that depends. Do you want to find him?">
+				<answer label = "What?">
+					<text>I'm sorry. You've lost me.</text>
+					<portrait>Charlotte Meh</portrait>
+					<question speaker = "Mrs Owens" value = "Its simple. Do you want to find God?">
+						<answer label = "yes">
+							<text>Oh. Well yes of course!</text>
+							<portrait>Charlotte Happy</portrait>
+							<jump>yes</jump>
+						</answer>
+						<answer label = "no">
+							<text>Oh. Well that's not really my thing.</text>
+							<portrait>Charlotte Angry</portrait>
+							<jump>no</jump>
+						</answer>
+						<answer label = "Hell no">
+							<portrait>Charlotte Angry</portrait>
+							<text>Hell no you crazy old bat.</text>
+							<speaker>Charlotte</speaker>
+							<text>How dare you! Blasphemer! Begone.</text>
+							<quit/>
+						</answer>
+					</question>
+				</answer>
+				<answer label = "yes">
+					<text>Umm... Yes?</text>
+					<label>yes</label>
+					<portrait>Charlotte Happy</portrait>
+					<question speaker="Mrs Owens" value = "Oh good. Its so good to see young people with a respect for God.">
+						<answer label = "Oh.">
+							<text>Oh. I um. I meant your son... I'd find your son...</text>
+							<speaker>Mrs Owens</speaker>
+							<portrait>Charlotte Meh</portrait>
+							<text>Thats ok. They are one and the same.</text>
+							<speaker>Alex</speaker>
+							<text>You think your son is God? That's... An interesting interpretation.</text>
+							<speaker>Mrs Owens</speaker>
+							<portrait>Charlotte Happy</portrait>
+							<text>Oh no. You misunderstand. My son is the way to God. He has a special connection you see. Always has. You should go see him.</text>
+							<jump>Invite</jump>
+						</answer>
+						<answer label = "Yes.">
+							<text>His Glory is everywhere and everlasting.</text>
+							<portrait>Charlotte Happy</portrait>
+							<speaker>Mrs Owens</speaker>
+							<text>Well said. You should visit my Son. I suspect you two have many things to talk about.</text>
+							<action>CRIncrement</action>
+							<jump>Invite</jump>
+						</answer>
+					</question>
+				</answer>
+				<answer label = "No">
+					<text>No, I'm not really looking right now.</text>
+					<label>no</label>
+					<portrait>Charlotte Angry</portrait>
+					<speaker>Mrs Owens</speaker>
+					<text>Nonsense! Everyone is searching for him and his redemption. You should speak to my son. He can help you on your journey.</text>
+					<action>CRDecrement</action>
+					<jump>Invite</jump>
+				</answer>
+			</question>
+		</answer>
+		<answer label = "joke">
+			<text>One day a vicar was driving down the road when a police car came behind, flashed it's lights and pulled him over to the side of the road.</text>
+			<text>"The reason I stopped you, said the policeman, "Is that you were speeding! Have you been drinking sir?"</text>
+			<text>"Only water, officer." replied the vicar.</text>
+			<text>"Then why is it I can smell wine on your breath?" said the policeman.</text>
+			<text>"Oh my Lord," replied the vicar, "He's done it again!"</text>
+			<speaker>Alex</speaker>
+			<portrait>Charlotte Angry</portrait>
+			<question speaker="Mrs Owens" value = "The Lord's miracles are not amusing!">
+				<answer label = "Agree">
+					<text>You are right. Forgive me.</text>
+					<portrait>Charlotte Happy</portrait>
+					<text>What makes a good sermon?</text>
+					<speaker>Mrs Owens</speaker>
+					<text>Well you see...</text>
+					<speaker>Alex</speaker>
+					<text>Let me tell you.</text>
+					<portrait>Charlotte Meh</portrait>
+					<text>The secret of a good sermon is to have a good beginning and a good ending</text>
+					<portrait>Charlotte Happy</portrait>
+					<text>and to have the two as close together as possible.</text>
+					<portrait>Charlotte Angry</portrait>
+					<speaker>Mrs Owens</speaker>
+					<text>Good day.</text>
+					<quit/>
+				</answer>
+				<answer label = "Disagree">
+					<text>Nonsense. You just have no sense of humor. Try this one.</text>
+					<text>A Sunday school teacher asked the children just before she dismissed them to go to church, "And why is it necessary to be quiet in church?"</text>
+					<text>Annie replied, "Because people are sleeping."</text>
+					<speaker>Mrs Owens</speaker>
+					<text>...</text>
+					<speaker>Alex</speaker>
+					<text>A pastor I know has a standard liturgy for funerals.</text>
+					<text>To personalize each service, he uses the Find and Replace command on his computer to replace the name of the deceased from the previous funeral with the new name.</text>
+					<text>The next morning, the funeral was going smoothly until the Apostle's Creed. "Jesus Christ," the congregation read from the program, "born of the Virgin Edna..."</text>
+					<speaker>Mrs Owens</speaker>
+					<text>Enjoy hell blasphemer.</text>
+					<quit/>
+				</answer>
+			</question>
+		</answer>
+	</question>
+	<label>Invite</label>
+	<speaker>Alex</speaker>
+	<question speaker = "Mrs Owens" value ="Will you be going to see my son?">
+		<answer label  = "Yes">
+			<text>Yes, I think I will visit your son.</text>
+			<portrait>Charlotte Happy</portrait>
+			<speaker>Mrs Owens</speaker>
+			<text>Oh good. You can find him in the next town over. Proceed north through the forest. You'll know the right road when you see it.</text>
+			<quit/>
+		</answer>
+		<answer label = "No">
+			<text>I don't think so Ma'am.</text>
+			<portrait>Charlotte Meh</portrait>
+			<speaker>Alex</speaker>
+			<question speaker = "Mrs Owens" value = "Are you sure dear?">
+				<answer label = "Yes">
+					<text>I am. Sorry.</text>
+					<speaker>Mrs Owens</speaker>
+					<text>Oh well. Best of luck to you in hell.</text>
+					<quit/>
+				</answer>
+				<answer label = "Well...">
+					<text>Well...</text>
+					<speaker>Mrs Owens</speaker>
+					<text>Go see him. He will remove all doubt from your mind. You can find him in the next town over. Proceed north through the forest. You'll know the right road when you see it.</text>
+					<quit/>
+				</answer>
+			</question>
+		</answer>
+		<answer label = "Of course">
+			<text>Yes, I think I will visit your son.</text>
+			<portrait>Charlotte Happy</portrait>
+			<speaker>Mrs Owens</speaker>
+			<text>Excellent, I am glad to see your respect for the church. You can find him in the next town over. Proceed north through the forest. You'll know the right road when you see it.</text>
+			<quit/>
+		</answer>
+		<answer label = "Never">
+			<text>Never.</text>
+			<portrait>Charlotte Angry</portrait>
+			<speaker>Mrs Owens</speaker>
+			<text>Enjoy hell blasphemer.</text>
+			<quit/>
+		</answer>
+	</question>
+</dialogue>

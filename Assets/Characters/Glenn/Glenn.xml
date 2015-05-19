@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Glenn Happy</portrait>
+	<speaker>Glenn</speaker>
+	<text>Hey there, I'm Glenn.</text>
+	<speaker>Alex</speaker>
+	<question speaker="Glenn" value="Looking for supplies?">
+		<answer label="Yes">
+			<text>What do you have?</text>
+			<speaker>Glenn</speaker>
+			<text>Why don't you take a look?</text>
+			<label>SHOP</label>
+			<portrait>Glenn Happy</portrait>
+			<question value = "Feast your eyes on these goods.">
+				<answer label="Some paper clips">
+					<speaker>Alex</speaker>
+					<text>I'll take one of those paper clips, I guess.</text>
+					<speaker>Glenn</speaker>
+					<text>Oooh good choice. It's made of premium... I dunno. Some sort of metal, I think. Iron is a main component since magnets work on it.</text>
+					<text>That'll be 25 cents, my main man.</text>
+					<jump>NO MONEY MO PROBLEMS</jump>
+				</answer>
+				<answer label="Rubber band">
+					<speaker>Alex</speaker>
+					<text>That rubber band looks pretty nice.</text>
+					<speaker>Glenn</speaker>
+					<text>Aaaah, you have quite an eye. That particular rubber band probably belonged to Napoleon Bonapare at one point.</text>
+					<text>He lost it at the battle of Waterloo, along with everything else his life had to offer.</text>
+					<text>Ten cents.</text>
+					<jump>NO MONEY MO PROBLEMS</jump>
+				</answer>
+				<answer label="Medicine">
+					<speaker>Alex</speaker>
+					<text>I would like that medicine.</text>
+					<speaker>Glenn</speaker>
+					<text>Ah yes, the medicine. It doesn't have a name, but it has mutiple purposes. A staple in several video games.</text>
+					<text>Because in computer land, all sicknesses can be cured using the same wonder-drug. I wonder how rich the guy is who invented this.</text>
+					<text>I don't know why we even need doctors with this stuff always available.</text>
+					<text>That'll run you about ten dollars.</text>
+					<jump>NO MONEY MO PROBLEMS</jump>
+				</answer>
+				<answer label="Mysterious lump">
+				<speaker>Alex</speaker>
+				<text>I want the lump.</text>
+				<speaker>Glenn</speaker>
+				<portrait>Glenn Interested</portrait>
+				<text>...you do?</text>
+				<portrait>Glenn Meh</portrait>
+				<text>I have no idea what this is, I'll be honest with you. Sometimes it kind of twitches, and I think once I heard it squeak.</text>
+				<text>I think it's throbbing a little.</text>
+				<text>Give me five bucks and it's yours.</text>
+				<label>NO MONEY MO PROBLEMS</label>
+				<speaker>Alex</speaker>
+				<text>Uuuh, yeah. About that. I am completely broke.</text>
+				<portrait>Glenn Angry</portrait>
+				<speaker>Glenn</speaker>
+				<text>Quit wasting my time, you window-shopper!</text>
+				<portrait>Glenn Meh</portrait>
+				<text>Catch you later, dude.</text>
+				</answer>
+				
+			</question>
+		</answer>
+		
+		<answer label="No.">
+			<speaker>Alex</speaker>
+			<text>Nah, I'm not interested.</text>
+			<portrait>Glenn Meh</portrait>
+			<speaker>Glenn</speaker>
+			<text>Aight.</text>
+		</answer>
+
+		<answer label ="Is that shirt a limited edition?">
+		<speaker>Alex</speaker>
+		<text>I like that shirt, dude. Looks pretty fancy. Is it a limited edition?</text>
+		<speaker>Glenn</speaker>
+		<portrait>Glenn Interested</portrait>
+		<text>Oh ho ho! You noticed, did you?</text>
+		<portrait>Glenn Happy</portrait>
+		<question value = "I take it you're a Pokemon fan?">
+
+			<answer label = "Wait, it's Pokemon? Nerd.">
+				<speaker>Alex</speaker>
+				<text>Wait. Hold on. That's from Pokemon? I take it back. The shirt's dumb and you're a huge nerd.</text>
+				<portrait>Glenn Angry</portrait>
+				<speaker>Glenn</speaker>
+				<text>Screw you, asshole.</text>
+			</answer>
+
+			<answer label = "Nope, I just think the shirt's cool.">
+				<speaker>Alex</speaker>
+				<text>Nope, I just think the shirt's cool.</text>
+				<speaker>Glenn</speaker>
+				<text>That's fair. You at least have good taste.</text>
+				<jump>WANNA SHOP?</jump>
+			</answer>
+
+			<answer label = "Of course!">
+			<speaker>Alex</speaker>
+			<text>Of course!</text>
+			<speaker>Glenn</speaker>
+			<text>Man, you have no idea how hard it is to find an actual fan around here. No one can even tell what this pokemon is.</text>
+			<question value = "Isn't that sad?">
+	
+				<answer label = "It's a Pidgeot">
+					<speaker>Alex</speaker>
+					<text>Yeah. It's so obviously a Pidgeot.</text>
+					<jump>YOU DUN GOOFED</jump>
+					</answer>
+				
+				<answer label= "It's a Charizard">
+					<speaker>Alex</speaker>
+					<text>Yeah. It's so obviously a Charizard.</text>
+					<jump>YOU DUN GOOFED</jump>
+					</answer>
+					
+				<answer label = "It's a Rapidash">
+					<speaker>Alex</speaker>
+					<text>Yeah, It's so obviously a Rapidash.</text>
+					<speaker>Glenn</speaker>
+					<text>YES. THANK YOU.</text>
+					
+					<question value ="So, do you play?">
+						<answer label= "Yeah. Favorite's Crystal.">
+						<portrait>Glenn Interested</portrait>
+						<speaker>Glenn</speaker>
+						<text>really?</text>
+						<portrait>Glenn Happy</portrait>
+						<text>Oh, man! A fellow believer! That one was my favorite, too!</text>
+						<portrait>Glenn Concerned</portrait>
+						<text>Dang, I haven't been able to play it in so long, though.</text>
+						<text>My mom sold my Gameboy Color at a garage sale when I was in high school.</text>
+
+						<label>GLEN QUEST</label>
+						<portrait>Glenn Concerned</portrait>
+						<question value = "I'd give anything for a new one...">
+							<answer label = "Maybe I can get you a new one.">
+							<speaker>Alex</speaker>
+							<text>Maybe I can get you a new one.</text>
+							<portrait>Glenn Meh</portrait>
+							<speaker>Glenn</speaker>
+							<text>That's really cool of you to offer, but I don't want to put you on some dumb fetch quest.</text>
+							<text>Some of those can be really boring and tedious, and you might have to trade, like, fifty different things for that hunk of plastic.</text>
+							<text>I can do my own fetch quests, anyway. I'm an adult.</text>
+							<text>*sigh*</text>
+							<text>Well, back to my duties as an unoffical shopkeeper.</text>
+							<text>...</text>
+							<jump>WANNA SHOP?</jump>
+							</answer>
+
+							<answer label = "Sucks, bro.">
+							<speaker>Alex</speaker>
+							<text>Sucks, bro.</text>
+							<portrait>Glenn Meh</portrait>
+							<speaker>Glenn</speaker>
+							<text>Yeah, well, what are you gonna do?</text>
+							<text>...</text>
+							<jump>WANNA SHOP?</jump>
+							</answer>
+							</question>
+							
+						</answer>
+						<answer label= "Yeah. Favorite's Emerald.">
+						<speaker>Glenn</speaker>
+						<text>I can respect that. Hoenn has a special place in my heart. But my personal favorite is Crystal.</text>
+						
+						<question value = "Live and let live, right?">
+							<answer label="True that.">
+							<speaker>Alex</speaker>
+							<text>True that.</text>
+							<speaker>Glenn</speaker>
+							<text>Heh.</text>
+							<text>I still play Emerald from time to time on my DS. Wish I could do the same with Crystal.</text>
+							<text>But, you know. DS backwards compatability can only go so far.</text>
+							<portrait>Glenn Meh</portrait>
+							<text>Also, of course, my mom had to sell my Gameboy Color at a garage sale when I was in high school.</text>
+							<jump>GLEN QUEST</jump>
+							
+							</answer>
+							<answer label="How about live and let die. Viva la Emerald forever!(Fight)">
+							<speaker>THE NARRATOR</speaker>
+							<text>WHAT ENSUED NEXT WAS A BATTLE OF THE AGES.</text>
+							<text>A BATTLE BETWEEN TWO NERDS OVER INSTALLMENTS OF A SILLY RPG LOVED BY LITTLE KIDS AND NERDS ALIKE.</text>
+							<text>WHO WON? DOES IT MATTER?</text>
+							<text>EVERYONE KNOWS THAT THE BATTLE WAS FOUGHT FOR NAUGHT. tHE BEST POKEMON GAME IS "POKEMON MYSTERY DUNGEON: RED RESCUE TEAM.</text>
+							</answer>		
+
+						</question>
+						</answer>
+						<answer label="No. I just have a lot of friends who play.">
+						<speaker>Alex</speaker>
+						<text>No. I just have a lot of friends who play.</text>
+						<speaker>Glenn</speaker>
+						<portrait>Glenn Interested</portrait>
+						<text>Huh.</text>
+						<portrait>Glenn Happy</portrait>
+						<text> Well, you should look into them. They're really good games.</text>
+						<jump>WANNA SHOP?</jump>
+						</answer>
+					</question>
+					</answer>
+				
+				<answer label = "It's a Neiflame">
+					<speaker>Alex</speaker>
+					<text>Yeah, it's so obviously a Neiflame.</text>
+					<portrait>Glenn Meh</portrait>
+					<speaker>Glenn</speaker>
+					<text>A what?</text>
+					<portrait>Glenn Angry</portrait>
+					<text>That's not even a Pokemon!</text>
+					<label>YOU DUN GOOFED</label>
+					<portrait>Glenn Meh</portrait>
+					<text>It's a Rapidash, dude.</text>
+					<speaker>Alex</speaker>
+					<text>Oh. Whoops. It's an honest mistake.</text>
+					<speaker>Glenn</speaker>
+					<text>Yeah, whatever.</text>
+					
+					<label>WANNA SHOP?</label>
+					<question value="So... you want to buy supplies or what?">
+						<answer label= "Sure.">
+						<speaker>Alex</speaker>
+						<text>Sure.</text>
+						<jump>SHOP</jump>
+						</answer>
+						<answer label= "Nah.">
+						<speaker>Alex</speaker>
+						<text>Nah.</text>
+						<speaker>Glenn</speaker>
+						<text>Catch you later, then.</text>
+						<quit/>
+						</answer>
+						</question>
+					</answer>
+					
+				</question>
+			</answer>			
+			</question>
+			</answer>
+	</question>
+</dialogue>

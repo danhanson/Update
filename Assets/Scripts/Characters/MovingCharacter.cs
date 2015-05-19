@@ -158,6 +158,11 @@ namespace Update.Characters {
 				anim.speed = 1;
 		}
 
+		public override void OnAction(Character c){
+			FaceDirection(MovementExtension.ToMovement(c.Index - Index));
+			base.OnAction(c);
+		}
+
 		// Called after every animation
 		protected void UpdateMovement(){
 			Movement = GetMovement ();

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Chris Meh</portrait>
+	<speaker>Alex</speaker>
+	<question speaker = "Chris" value = "MARGRET? WHERE ARE YOU?">
+		<answer label = "here">
+			<text>I'm over here Chris! Come to me!</text>
+			<portrait>Chris Angry</portrait>
+			<speaker>Chris</speaker>
+			<text>Damn it Julia. I want MARGRET not YOU. Go back to Danny!</text>
+			<quit/>
+		</answer>
+		<answer label = "There">
+			<label>marge</label>
+			<text>She went that way! Come on! Lets get her!</text>
+			<portrait>Chris Happy</portrait>
+			<speaker>Chris</speaker>
+			<text>Hooray!</text>
+			<portrait>Chris Meh</portrait>
+			<speaker>Alex</speaker>
+			<question speaker = "Chris" value = "Wait. How do I know you aren't trying to steal her?">
+				<answer label = "I'm Taken">
+					<text>Oh, I'm taken.</text>
+					<portrait>Chris Angry</portrait>
+					<speaker>Chris</speaker>
+					<text>She always did like being a home wrecker! Clear out!</text>
+					<quit/>
+				</answer>
+				<answer label = "I'm a Woman">
+					<text>I'm a woman of course! And I don't swing that way.</text>
+					<portrait>Chris Happy</portrait>
+					<speaker>Chris</speaker>
+					<text>Neither does she! Alright help me find her.</text>
+					<text>...</text>
+					<portrait>Chris Meh</portrait>
+					<label>glasses</label>
+					<speaker>Alex</speaker>
+					<question speaker = "Chris" value = "Wait. Where are my glasses?">
+						<answer label = "You don't wear glasses">
+							<text>You don't wear glasses.</text>
+							<portrait>Chris Happy</portrait>
+							<speaker>Chris</speaker>
+							<text>Oh right. Silly me!</text>
+							<speaker>Alex</speaker>
+							<question speaker="Chris" value = "I need to find a hedgehog.">
+								<answer label = "home">
+									<text>They have one for you back home. You should go there.</text>
+									<portrait>Chris Happy</portrait>
+									<speaker>Chris</speaker>
+									<text>Yay! I'm gonna do that.</text>
+									<action>ChrisHome</action>
+									<quit/>
+								</answer>
+								<answer label = "what?">
+									<text>What are you talking about? Crazy old coot.</text>
+									<jump>Joke</jump>
+								</answer>
+							</question>
+						</answer>
+						<answer label = "Home">
+							<text>You left them at home. You should go get them.</text>
+							<label>commies</label>
+							<portrait>Chris Angry</portrait>
+							<speaker>Chris</speaker>
+							<text>Damn Commie. Tryin' to tell me how to live my life. Buzz off.</text>
+							<quit/>
+						</answer>
+					</question>
+				</answer>
+				<answer label = "I'm Black">
+					<text>I'm black. I'm sure a nice, 50's gal like her wouldn't have anything to do with me.</text>
+					<portrait>Chris Angry</portrait>
+					<speaker>Chris</speaker>
+					<text>Don't lie to me boy! I'm old. Not blind!</text>
+					<text>Speaking of which...</text>
+					<jump>glasses</jump>
+				</answer>
+			</question>
+		</answer>
+		<answer label = "old">
+			<text>She's probably off in the corner somewhere, reminiscing about the good old days.</text>
+			<label>Joke</label>
+			<portrait>Chris Happy</portrait>
+			<speaker>Chris</speaker>
+			<text>Everybody my age is getting so old.</text>
+			<speaker>Alex</speaker>
+			<text>I know how to make your wife drive more carefully: I told her that if she has an accident, the newspapers would print her age.</text>
+			<speaker>Chris</speaker>
+			<text>So far, this is the oldest I've been.</text>
+			<speaker>Alex</speaker>
+			<text>Old is when your wife says, Let’s go upstairs and make love, and you answer, Honey, I can’t do both!</text>
+			<question speaker = "Chris" value = "Now what was I doing...">
+				<answer label = "MARGRET">
+					<text>You were looking for MARGRET. WHERE ARE YOU MARGRET?</text>
+					<jump>marge</jump>
+				</answer>
+				<answer label = "glasses">
+					<text>You were looking for your glasses.</text>
+					<jump>glasses</jump>
+				</answer>
+				<answer label = "Home">
+					<text>You were just going home.</text>
+					<jump>commies</jump>
+				</answer>
+				<answer label = "Alligator">
+					<text>You were looking for your alligator.</text>
+					<jump>marge</jump>
+				</answer>
+			</question>
+		</answer>
+	</question>
+</dialogue>
