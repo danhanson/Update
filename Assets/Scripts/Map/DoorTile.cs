@@ -29,7 +29,7 @@ namespace Update.Map {
 		}
 
 		public virtual void OnLevelWasLoaded(int level){
-			if (this.Level == level) {
+			if (this.Level == level && DoorEnabled) {
 				GameObject obj = GameObject.Find (PLAYER_NAME);
 				Player p = obj.GetComponent<Player>();
 				p.MoveTo(EntryPoint);

@@ -67,6 +67,10 @@ namespace Update.Map {
 			return GameData.map [x, y];
 		}
 
+		public virtual void Awake(){
+			OnEnable();
+		}
+
 		public virtual void OnEnable(){
 			// get the tiles position and insert it into the map
 			// this is backwards from what one would expect, which

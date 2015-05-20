@@ -57,7 +57,7 @@ public class MainMenu : MonoBehaviour {
 				print (PlayerPrefs.GetInt("TimePassed"));
 				PlayerPrefs.SetInt ("Offset",0);
 				print (PlayerPrefs.GetInt("Offset"));
-				Application.LoadLevel(1);
+				Application.LoadLevel(7);
 			}
 		}
 	}

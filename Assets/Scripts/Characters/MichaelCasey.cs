@@ -15,16 +15,19 @@ namespace Update.Characters {
 				if (PlayerPrefs.GetInt("TimePassed")>2057){
 					//gameObject.GetComponent<SpriteRenderer>().enabled = false;
 					gameObject.SetActive(false);
+					tile().character = null;
 				}
 			}
 			if (stage == 2) {
 				//gameObject.GetComponent<SpriteRenderer>().enabled = false;
 				gameObject.SetActive(false);
+					tile().character = null;
 			}
 			if (stage == 3) {
 				if (PlayerPrefs.GetInt("TimePassed")<3085){
 					//gameObject.GetComponent<SpriteRenderer>().enabled = false;
 					gameObject.SetActive(false);
+					tile().character = null;
 				}
 			}
 		}

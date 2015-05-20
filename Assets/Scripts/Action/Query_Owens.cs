@@ -5,33 +5,35 @@ using UnityEngine;
 
 public class Query_Owens : UpdateQuery {
 
+	public string query;
+
 	public override string Apply(){
 		FatherOwens npc = GetComponent<FatherOwens>();
-		if (queryName == "checkIsBusy") {
+		if (query == "checkIsBusy") {
 			if (npc.getBusy ()) {
 				return "true";
 			} else {
 				return "false";
 			}
-		} else if (queryName == "checkFirst") {
+		} else if (query == "checkFirst") {
 			if (npc.getFirstSermon ()) {
 				return "true";
 			} else {
 				return "false";
 			}
-		} else if (queryName == "checkSecond") {
+		} else if (query == "checkSecond") {
 			if (!npc.getSecondSermon () && (PlayerPrefs.GetInt ("TimePassed") > 1029)) {
 				return "false";
 			} else {
 				return "true";
 			}
-		} else if (queryName == "checkBusyReset1") {
+		} else if (query == "checkBusyReset1") {
 			if (!npc.getSecondSermon () && (PlayerPrefs.GetInt ("TimePassed") > 1029)) {
 				return "true";
 			} else {
 				return "false";
 			}
-		} else if (queryName == "checkKnowledge") {
+		} else if (query == "checkKnowledge") {
 			if (PlayerPrefs.HasKey ("Robby")) {
 				print("has key");
 				if (PlayerPrefs.GetString ("Robby") == "true") {
@@ -42,9 +44,9 @@ public class Query_Owens : UpdateQuery {
 			} else {
 				return "false";
 			}
-		} else if (queryName == "checkOutcome") {
+		} else if (query == "checkOutcome") {
 			return PlayerPrefs.GetString ("outcome");
-		} else if (queryName == "checkStanding") {
+		} else if (query == "checkStanding") {
 			if (PlayerPrefs.GetInt ("Owens_Rep") > 0) {
 				return "good";
 			} else {
