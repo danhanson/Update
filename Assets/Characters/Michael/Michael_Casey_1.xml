@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<label>START</label>
+	<query name = "checkIsBusy">
+		<case value = "false">
+			<query name = "checkFirst">
+				<case value = "true">
+					<query name = "checkSecond">
+						<case value = "true">
+							<portrait>Casey_Neutral</portrait>
+							<speaker>Michael Casey</speaker>
+							<text>That was... interesting. Definitely different than his last sermon.</text>
+							<action>makeBusy</action>
+							<label>JOKE</label>
+							<question value = "What do you have to say about it this time?">
+								<answer label = "I totally agree.">
+									<speaker>Player</speaker>
+									<text>I totally agree with him.</text>
+									<speaker>Michael Casey</speaker>
+									<text>You don't think it was a little big aggressive? Oh well, maybe that's just me. This whole Update thing has the whole town on edge, I'm probably just being paranoid.</text>
+									<quit/>
+								</answer>
+								<answer label = "It was aggressive.">
+									<speaker>Player</speaker>
+									<text>I think it was a little aggressive.</text>
+									<speaker>Michael Casey</speaker>
+									<text>Alright, so I'm not just paranoid. I absolutely love the Father, but I think this whole Update thing has addled his brain a little bit. Do yourself a favor and keep an eye on him. Something doesn't feel right.</text>
+									<quit/>
+								</answer>
+								<answer label = "Who are you again?">
+									<speaker>Player</speaker>
+									<text>Who are you again?</text>
+									<speaker>Michael Casey</speaker>
+									<text>Ha. Ha. Ha.</text>
+									<jump>JOKE</jump>
+								</answer>
+							</question>
+						</case>
+						<case value = "listen">
+							<portrait>Casey_Neutral</portrait>
+							<speaker>Michael Casey</speaker>
+							<text>I think the Father is about to give another sermon.</text>
+							<quit/>
+						</case>
+						<case value = "false">
+							<portrait>Casey_Neutral</portrait>
+							<speaker>Michael Casey</speaker>
+							<text>Sure was a nice sermon that Father Owens gave.</text>
+							<action>makeBusy</action>
+							<question value="What did you think about it?">
+								<answer label="It was very interesting.">
+									<speaker>Player</speaker>
+									<text>I thought it was definitely interesting. I'd like to hear more about what he has to say about what's going on.</text>
+									<label>HAPPY</label>
+									<portrait>Casey_Happy</portrait>
+									<speaker>Michael Casey</speaker>
+									<text>Owens is a very passionate man. Him and I grew up together, and he's always been like this. I'm glad the town has someone like him during these times. I've got to be going, but it was a pleasure to meet you.</text>
+									<action>addRep</action>
+									<quit/>
+								</answer>
+								<answer label="You mean the ranting of a lunatic?">
+									<speaker>Player</speaker>
+									<text>You mean the ranting of a lunatic?</text>
+									<label>ANGRY</label>
+									<portrait>Casey_Angry</portrait>
+									<speaker>Michael Casey</speaker>
+									<text>You might want to keep that opinion to yourself, son. This town really likes its Father, and he's doing quite a bit to keep everyone sane during all this. I've got to be going, but you should watch your mouth when you talk.</text>
+									<action>subRep</action>
+									<quit/>
+								</answer>
+								<answer label="Who are you again?">
+									<speaker>Player</speaker>
+									<text>Who are you again?</text>
+									<speaker>Michael Casey</speaker>
+									<question value="Oh, how rude of me. I'm Michael Casey, the town sheriff. The Father and I grew up together in this town.">
+										<answer label="He seems like a nice man.">
+											<speaker>Player</speaker>
+											<text>He seems like a nice man.</text>
+											<jump>HAPPY</jump>
+										</answer>
+										<answer label="He seems a little crazy.">
+											<speaker>Player</speaker>
+											<text>He seems a little crazy.</text>
+											<jump>ANGRY</jump>
+										</answer>
+									</question>
+								</answer>
+							</question>
+						</case>
+						<default>
+							<text>I broke.</text>
+						</default>
+					</query>
+				</case>
+				<case value = "false">
+					<portrait>Casey_Neutral</portrait>
+					<speaker>Michael Casey</speaker>
+					<text>The Father is about to give his sermon. You should listen to it.</text>
+					<quit/>
+				</case>
+				<default>
+					<text>I broke.</text>
+				</default>
+			</query>
+		</case>
+		<case value = "true">
+			<query name = "checkBusyReset1">
+				<case value = "true">
+					<action>makeNotBusy</action>
+					<jump>START</jump>
+				</case>
+				<case value = "false">
+					<portrait>Casey_Neutral</portrait>
+					<speaker>Michael Casey</speaker>
+					<text>Sorry son, I'm busy right now.</text>
+					<quit/>
+				</case>
+				<default>
+					<text>I broke.</text>
+				</default>
+			</query>
+		</case>
+		<default>
+			<text>I broke.</text>
+		</default>
+	</query>
+</dialogue>

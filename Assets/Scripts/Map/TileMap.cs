@@ -9,6 +9,8 @@
 // ------------------------------------------------------------------------------
 
 using Update;
+using System;
+using UnityEngine;
 
 namespace Update.Map
 {
@@ -22,7 +24,7 @@ namespace Update.Map
 
 		public Tile this[Vector index]
 		{
-			get { return tiles [index.X, index.Y]; }
+			get { try { return tiles [index.X, index.Y]; } catch(IndexOutOfRangeException e){ Debug.Log("EXCEPTION: "+index); return null; }}
 			set { tiles [index.X, index.Y] = value; }
 		}
 

@@ -5,7 +5,7 @@ using Update.Action;
 using Update.Characters;
 using Update;
 
-public class makeBusy : RecordedAction {
+public class makeBusy : LevelAction {
 
 	public bool busy = true;
 	
@@ -13,6 +13,6 @@ public class makeBusy : RecordedAction {
 	// a null reference exception
 	public makeBusy() : base(delegate(){
 		FatherOwens n = GameObject.Find("Father Owens").GetComponent<FatherOwens>();
-		n.isBusy = busy;
+		n.setBusy(busy);
 	}){}
 }

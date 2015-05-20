@@ -5,7 +5,7 @@ using Update.Action;
 using Update.Characters;
 using Update;
 
-public class changeReputation : RecordedAction {
+public class changeReputation : LevelAction {
 	
 	public int reputation;
 	
@@ -13,6 +13,6 @@ public class changeReputation : RecordedAction {
 	// a null reference exception
 	public changeReputation() : base(delegate(){
 		FatherOwens n = GameObject.Find("Father Owens").GetComponent<FatherOwens>();
-		n.reputation += reputation;
+		n.setReputation(n.getReputation() + reputation);
 	}){}
 }

@@ -5,7 +5,7 @@ using Update.Action;
 using Update.Characters;
 using Update;
 
-public class markProgress_Owens : RecordedAction {
+public class markProgress_Owens : LevelAction {
 	
 	public string toChange;
 	
@@ -18,11 +18,11 @@ public class markProgress_Owens : RecordedAction {
 		if (toChange == "firstSermon"){
 			print ("I'm doing the right thing.");
 
-			n.firstSermon = true;
+			n.setFirstSermon(true);
 		} else if (toChange == "secondSermon"){
-			n.secondSermon = true;
+			n.setSecondSermon(true);
 		} else if (toChange == "firstConvo"){
-			n.firstConvo = true;
+			//n.setFirstConvo = true;
 		}
 	}){}
 }

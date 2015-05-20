@@ -47,20 +47,40 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\AutoSnap.cs" />
+     <None Include="Assets\Characters\Father Owens\Owens_1.xml" />
      <None Include="Assets\Characters\Chris Green\Chris.xml" />
      <None Include="Assets\Characters\Charlotte\Charlotte.xml" />
      <None Include="Assets\Characters\Jeffery\Jeffery.xml" />
+     <None Include="Assets\signs\citycollege.xml" />
      <None Include="Assets\Characters\Ana\Ana.xml" />
+     <None Include="Assets\Characters\Father Owens\Owens_3.xml" />
+     <None Include="Assets\signs\citycenter.xml" />
      <None Include="Assets\Characters\Mike\Mike.xml" />
+     <None Include="Assets\Scripts\Dialogue\Mayor_2.xml" />
      <None Include="Assets\Characters\Wallace\Wallace.xml" />
      <None Include="Assets\Characters\Glenn\Glenn.xml" />
+     <None Include="Assets\signs\smalltowncenter.xml" />
      <None Include="Assets\Characters\Felix\Felix.xml" />
      <None Include="Assets\Scripts\Dialogue\Sample.xml" />
+     <None Include="Assets\Characters\Rebecca\Rebecca_Tinel_1.xml" />
+     <None Include="Assets\signs\home.xml" />
+     <None Include="Assets\Characters\Michael\Michael_Casey_2.xml" />
      <None Include="Assets\Characters\Meagen\Meagan.xml" />
+     <None Include="Assets\Characters\Father Owens\Owens_2.xml" />
+     <None Include="Assets\signs\smalltown.xml" />
+     <None Include="Assets\signs\citysoutheast.xml" />
      <None Include="Assets\Characters\Father Owens\Owens.xml" />
+     <None Include="Assets\Scripts\Dialogue\Rebecca_Tinel_1.xml" />
      <None Include="Assets\Characters\Monica\Monica.xml" />
+     <None Include="Assets\signs\cityeast.xml" />
      <None Include="Assets\Characters\Isaac\Isaac.xml" />
+     <None Include="Assets\signs\towncenter.xml" />
+     <None Include="Assets\Characters\Michael\Michael_Casey_1.xml" />
+     <None Include="Assets\Characters\Mayor\Mayor_2.xml" />
+     <None Include="Assets\signs\retirementhome.xml" />
      <None Include="Assets\Characters\Hugh\Hugh.xml" />
+     <None Include="Assets\signs\citypolice.xml" />
+     <None Include="Assets\signs\smalltownentry.xml" />
      <None Include="Assets\Characters\Emmanuel\Emmanuel.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

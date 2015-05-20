@@ -11,10 +11,10 @@ public class checkProgress_Owens : UpdateQuery
 	public override string Apply(){
 		FatherOwens npc = GameObject.Find("Father Owens").GetComponent<FatherOwens>();
 		if (toCheck == "first sermon"){
-			if (npc.firstSermon){return "true";}
+			if (npc.getFirstSermon()){return "true";}
 			return "false";
 		} else if (toCheck == "second sermon"){
-			if (npc.secondSermon){return "true";}
+			if (npc.getSecondSermon()){return "true";}
 			return "false";
 		}
 		return "false";

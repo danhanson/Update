@@ -5,7 +5,7 @@ public class checkIsBusy : UpdateQuery {
 	
 	public override string Apply(){
 		FatherOwens npc = GetComponent<FatherOwens>();
-		if(npc.isBusy)
+		if(npc.getBusy())
 			return "true";
 		else
 			return "false";

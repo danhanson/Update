@@ -52,7 +52,7 @@ namespace Update.Action {
 			levels[level].ApplyActions();
 		}
 
-		public static void RecordAction(int level, RecordedAction action){
+		public static void RecordAction(int level, LevelAction action){
 			RecordAction(level,action.Functor);
 		}
 
@@ -61,3 +61,4 @@ namespace Update.Action {
 		}
 	}
 }
+

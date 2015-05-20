@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<label>START</label>
+	<query name = "checkOutcome">
+		<case value = "peaceful">
+			<portrait>Owens</portrait>
+			<speaker>Father Owens</speaker>
+			<text>Thank you for showing me the error of my ways.</text>
+			<portrait>Casey</portrait>
+			<speaker>Michael Casey</speaker>
+			<text>And mine as well. Without your help, we would have committed a terrible sin.</text>
+			<portrait>Mayor</portrait>
+			<speaker>Mayor</speaker>
+			<text>Things and stuff.</text>
+			<quit/>
+		</case>
+		<case value = "bloodbath">
+			<query name = "checkStanding">
+				<case value = "good">
+					<portrait>Owens</portrait>
+					<speaker>Father Owens</speaker>
+					<text>The time has come! The sinners need to be sacrificed before The Update completes. His gift is for us and us alone!</text>
+					<portrait>Casey</portrait>
+					<speaker>Michael Casey</speaker>
+					<text>You can stick around if you want. But you're free to go if you'd rather not.</text>
+					<portrait>Mayor</portrait>
+					<speaker>Mayor</speaker>
+					<text>*whispers* Help me.</text>
+					<quit/>
+				</case>
+				<case value = "bad">
+					<label>BAD</label>
+					<portrait>Owens</portrait>
+					<speaker>Father Owens</speaker>
+					<text>The time has come! The sinners need to be sacrificed before The Update completes. His gift is for us and us alone!</text>
+					<text>And you, you blasphemous sinner, are going to join their ranks.</text>
+					<text>Michael, if you will...</text>
+					<portrait>Casey</portrait>
+					<speaker>Michael Casey</speaker>
+					<text>Of course.</text>
+					<action>death</action>
+					<quit/>
+				</case>
+				<default>
+					<text>I broke.</text>
+				</default>
+			</query>
+		</case>
+		<default>
+			<text>I broke.</text>
+			<jump>BAD</jump>
+		</default>
+	</query>
+</dialogue>

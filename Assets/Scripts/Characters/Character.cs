@@ -30,7 +30,8 @@ namespace Update.Characters
 		}
 
 		public virtual void Start(){
-			tile ().character = this;
+			if(tile())
+				tile ().character = this;
 			d = GetComponent<Dialogue.Dialogue>();
 		}
 	}

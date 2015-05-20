@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<label>START</label>
+	<speaker>Michael Casey</speaker>
+	<portrait>Casey_Neutral</portrait>
+	<text>Don't look at me like that. Talk to the Father.</text>
+	<quit/>
+</dialogue>

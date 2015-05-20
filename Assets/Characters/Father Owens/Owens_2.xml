@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<label>START</label>
+	<portrait>Owens</portrait>
+	<speaker>Alex</speaker>
+	<text>Father... what are you doing here?</text>
+	<speaker>Father Owens</speaker>
+	<text>I'm here to bring in the Mayor.</text>
+	<speaker>Alex</speaker>
+	<text>What do you mean "bring him in"?</text>
+	<speaker>Father Owens</speaker>
+	<text>To be sacrificed before the Update is complete. He is not deserving of His gift.</text>
+	<portrait>Mayor</portrait>
+	<speaker>Mayor</speaker>
+	<text>I'm sorry, what?</text>
+	<portrait>Owens</portrait>
+	<speaker>Father Owens</speaker>
+	<text>You heard me. You have been embezzling from this town for years and no one has had the courage to confront you. Until now. The Update is coming and you will not be a part of it.</text>
+	<portrait>Mayor</portrait>
+	<speaker>Mayor</speaker>
+	<text>And you too, Michael? Have you been helping him get away with this?</text>
+	<portrait>Casey</portrait>
+	<speaker>Michael Casey</speaker>
+	<text>*grunt*</text>
+	<text>Don't make this harder than it has to be.</text>
+	<query name = "checkKnowledge">
+		<case value = "true">
+			<speaker>Alex</speaker>
+			<text>But Father...</text>
+			<portrait>Owens</portrait>
+			<speaker>Father Owens</speaker>
+			<question value = "What?">
+				<answer label = "I know your secret">
+					<speaker>Alex</speaker>
+					<text>I know your secret.</text>
+					<speaker>Father Owens</speaker>
+					<text>What secret?</text>
+					<speaker>Alex</speaker>
+					<text>That you're Robby's father. You're a sinner just like the rest of us.</text>
+					<speaker>Father Owens</speaker>
+					<text>How did...</text>
+					<portrait>Casey</portrait>
+					<speaker>Michael Casey</speaker>
+					<text>Is this true, Father?</text>
+					<portrait>Owens</portrait>
+					<speaker>Father Owens</speaker>
+					<text>I...</text>
+					<text>...</text>
+					<text>...</text>
+					<text>... yes.</text>
+					<portrait>Casey</portrait>
+					<speaker>Michael Casey</speaker>
+					<text>I can't believe you would lie to us. To me. To this town. I can't believe you would get me involved in something like this.</text>
+					<text>I have to go set them all free. And Father...</text>
+					<text>You're under arrest.</text>
+					<action>hideNPC2</action>
+					<quit/>
+				</answer>
+				<answer label = "Nevermind">
+					<speaker>Alex</speaker>
+					<text>Nevermind.</text>
+					<portrait>Owens</portrait>
+					<speaker>Father Owens</speaker>
+					<text>Alright then... We'll be leaving now.</text>
+					<speaker>Alex</speaker>
+					<text>You observe the Father and Michael leave with the Mayor</text>
+					<action>hideNPC3</action>
+					<quit/>
+				</answer>
+			</question>
+		</case>
+		<case value = "false">
+			<speaker>Alex</speaker>
+			<text>You observe the Father and Michael leave with the Mayor</text>
+			<action>hideNPC3</action>
+			<quit/>
+		</case>
+		<default>
+			<text>I broke.</text>
+		</default>
+	</query>
+</dialogue>

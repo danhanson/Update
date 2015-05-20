@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<portrait>Tinel1</portrait>
+	<query name = "checkIfBusy">
+		<case value = "false">
+			<speaker>Rebecca Tinel</speaker>
+			<text>Why... did... you just walk into my house?!?</text>
+			<speaker>Player</speaker>
+			<text>...</text>
+			<speaker>Rebecca Tinel</speaker>
+			<text>...</text>
+			<speaker>Player</speaker>
+			<text>...</text>
+			<speaker>Rebecca Tinel</speaker>
+			<text>...</text>
+			<speaker>Player</speaker>
+			<text>...</text>
+			<speaker>Rebecca Tinel</speaker>
+			<label>START</label>
+			<text>Alright.... anyways...</text>
+			<question value = "How can I help you?">
+				<answer label = "Who are you?">
+					<speaker>Player</speaker>
+					<text>Who are you?</text>
+					<speaker>Rebecca Tinel</speaker>
+					<text>So, not only do you break into my house, but you also don't know who I am? Lovely. I'm Rebecca. And over there is my son, Robby.</text>
+					<jump>START</jump>
+				</answer>
+				<answer label = "The Update">
+					<speaker>Player</speaker>
+					<text>What do you think about The Update?</text>
+					<speaker>Rebecca Tinel</speaker>
+					<text>Of course the whole thing is frightening... and I'm scared for what this will eventually progress to. But it's not like we have a say in anything. Doctors are absolutely clueless, and the media is just a mess.</text>
+					<text>What scares me even more is Father Owens. He's always been very aggressive when it comes to religion, and it seems like he's using the mass hysteria to shove his views on the town.</text>
+					<question value = "Which is extremely hypocritical if you ask me...">
+						<answer label = "Why's that?">
+							<speaker>Player</speaker>
+							<text>Why's that?</text>
+							<speaker>Rebecca Tinel</speaker>
+							<text>I... really shouldn't talk about it.</text>
+							<text>You should probably go.</text>
+							<action>makeBusyAndKnown</action>
+							<quit/>
+						</answer>
+						<answer label = "Leave">
+							<quit/>
+						</answer>
+					</question>
+				</answer>
+			</question>
+		</case>
+		<case value = "true">
+			<speaker>Rebecca Tinel</speaker>
+			<text>We shouldn't be talking about this.</text>
+		</case>
+		<default>
+			<text>I broke.</text>
+		</default>
+	</query>
+</dialogue>

@@ -10,11 +10,16 @@ using Update.Characters;
 namespace Update.Map {
 	public class DoorTile : Tile {
 
+		public bool DoorEnabled;
+
 		protected const string PLAYER_NAME = "Player";
 
 		public int Level;
 		public Vector EntryPoint;
 
+		public override bool OnEnter(Character c){
+			return DoorEnabled;
+		}
 
 		public override void OnLand(Character c) {
 			if (c.gameObject.name != PLAYER_NAME)

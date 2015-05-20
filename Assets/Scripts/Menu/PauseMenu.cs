@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{	
-		PlayerPrefs.DeleteAll ();
+		//PlayerPrefs.DeleteAll ();
 		childCount = gameObject.transform.childCount;
 		for (int i = 0; i < childCount; i++) {
 			gameObject.transform.GetChild(i).gameObject.SetActive(false);

@@ -38,7 +38,10 @@ namespace Update.Dialogue {
 		public void AddDialogue(string label, string textStr, UnityAction callback){
 			gameObject.SetActive (true);
 			player.enabled = false;
-            text.text += label + ": "+textStr + "\n\n";
+			if(label != null && label != "")
+				text.text += label + ": "+textStr + "\n\n";
+			else
+				text.text += textStr + "\n\n";
 			onSpace = callback;
 		}
 		

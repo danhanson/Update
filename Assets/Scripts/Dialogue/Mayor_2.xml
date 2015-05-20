@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dialogue>
+	<label>START</label>
+	<portrait>Mayor</portrait>
+	<query name = "checkStatus">
+		<case value = "before">
+			<speaker>Mayor</speaker>
+			<text>Oh, hello. I've seen you around the town the past few days.</text>
+			<question value = "What brings you to my home?">
+				<answer label = "Father Owens">
+					<speaker>Player</speaker>
+					<text>I'm concerned about Father Owens' actions.</text>
+					<speaker>Mayor</speaker>
+					<text>You and me both. He has such a huge influence in this town, and with how malleable everyone is right now because of The Update, he essentially has a cult behind him. People have been disappearing all throughout town since we've hit 40%.</text>
+					<text>I think he's involved, but because him and Michael grew up together, there's no one for me to bring my concerns up to.</text>
+					<text>I just with that.... what the hell?!</text>
+					<action>showNPCs</action>
+				</answer>
+				<answer label = "Nothing">
+					<speaker>Player</speaker>
+					<text>Nothing. Just looking around.</text>
+					<speaker>Mayor</speaker>
+					<text>Alright, well let me know if you see anything you like. Loljk.</text>
+					<quit/>
+				</answer>
+			</question>
+		</case>
+		<case value = "middle">
+			<speaker>Mayor</speaker>
+			<text>Why the hell did they barge in here?</text>
+		</case>
+		<case value = "after">
+			<speaker>Mayor</speaker>
+			<text>I can't thank you enough for saving me. And the town. Owens was an absolute lunatic and was turning this town into a cult.</text>
+			<text>Let's all try and get some sleep.</text>
+		</case>
+		<default>
+			<text>I broke.</text>
+		</default>
+	</query>
+</dialogue>

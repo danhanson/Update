@@ -51,6 +51,12 @@ public class MainMenu : MonoBehaviour {
 			if (isQuit) {
 				Application.Quit();
 			} else {
+				//print ("I'm doing my job.");
+				PlayerPrefs.DeleteAll();
+				PlayerPrefs.SetInt("TimePassed",0);
+				print (PlayerPrefs.GetInt("TimePassed"));
+				PlayerPrefs.SetInt ("Offset",0);
+				print (PlayerPrefs.GetInt("Offset"));
 				Application.LoadLevel(1);
 			}
 		}
