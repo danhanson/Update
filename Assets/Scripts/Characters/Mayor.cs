@@ -11,14 +11,14 @@ namespace Update.Characters {
 			base.Start ();
 			if (stage == 3) {
 				if (PlayerPrefs.GetInt ("TimePassed") < 3085) {
-					//gameObject.GetComponent<SpriteRenderer>().enabled = false;
-					gameObject.SetActive(false);
+					gameObject.GetComponent<SpriteRenderer>().enabled = false;
+					//gameObject.SetActive(false);
 					tile().character = null;
 				}
 			}
 			if (PlayerPrefs.GetInt ("TimePassed") < 2057) {
-				//gameObject.GetComponent<SpriteRenderer> ().enabled = false;
-				gameObject.SetActive(false);
+				gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+				//gameObject.SetActive(false);
 				tile().character = null;
 			}
 		}
